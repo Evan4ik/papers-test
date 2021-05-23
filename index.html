@@ -20,10 +20,11 @@
 	<button onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/denied.png"> </img></button>
 </center>
 	<script>
-		var time = [0, 0, 0]
-		time[0] = getDate()
-		time[1] = getMonth()
-		time[2] = getFullYear()
+		var d = new Date();
+		var time = [0, 0, 0];
+		time[0] = d.getDate();
+		time[1] = d.getMonth();
+		time[2] = d.getFullYear();
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
 		var correct = 0
