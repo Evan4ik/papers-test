@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <img src="images/axoant.png"> </img>
+    <img id="entrant0" src="images/axoant.png"> </img>
+    <img id="entrant1" src="images/axoant.png"> </img>
 	<right>
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
@@ -15,6 +16,11 @@
 	<script>
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
+		var entrants = [document.getElementById("entrant0")];
+		for (randomizer = 0, randomizer <= entrants.length, randomizer ++) {
+			entrants[randomizer].style.display = "none";
+			entrants[0].style.display = "block";
+		}
 		random("ant, axo", "stark, mr", "name")
 		random("a", "a", "gender")
 		function random(n1, n2, whatToRandom) {
@@ -38,6 +44,7 @@
 		document.getElementById("gender").innerHTML = "SEX: " + passport[1]
 		}
 		}
+		if (
 	</script>
 	</body>
 </html>
