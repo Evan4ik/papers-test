@@ -8,11 +8,13 @@
   <body>
     <img id="entrant0" src="images/axoant.png"> </img>
     <img id="entrant1" src="images/axoant.png"> </img>
-	<right>
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
 		<p id="expire"> EXP: 9999 </p>
-	</right>
+<center>
+	<button> <img src="images/approved.png"> </img></button>
+<button> <img src="images/denied.png"> </img></button>
+</center>
 	<script>
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
@@ -44,7 +46,6 @@
 		document.getElementById("gender").innerHTML = "SEX: " + passport[1]
 		}
 		}
-		if (
 	</script>
 	</body>
 </html>
