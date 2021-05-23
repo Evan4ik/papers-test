@@ -48,9 +48,10 @@
 					passport[1] = "M"
 				} else if (passport[1] == "SEX: F ") {
 					passport[1] = "F"
-				} else {
+				} else if (passport[1] == "SEX: ? ") {
 					passport[1] == "?"
 				}
+				console.log(passport[1])
 			} else {
 				randomizer = Math.floor(Math.random() * 31);
 				if (randomizer <= 10) {
