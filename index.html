@@ -95,7 +95,7 @@
 						fakeTime[0] = 1;
 					}
 				}
-				passport[2] = time
+				passport[2] = fakeTime
 			} else {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] -= randomizer;
@@ -121,7 +121,7 @@
 						fakeTime[0] = 31;
 					}
 				}
-				passport[2] = time
+				passport[2] = fakeTime
 			}
 			document.getElementById("expire").innerHTML = "ENTER BY: " + passport[2]
 		}
