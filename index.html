@@ -8,6 +8,9 @@
   <body>
     <img id="entrant0" src="images/axoant.png"> </img>
     <img id="entrant1" src="images/yowhat.PNG"> </img>
+    <img id="entrant2" src="images/agresiv.png"></img>
+    <img id="entrant3" src="images/timothy.png"></img>
+    <img id="entrant4" src="images/gramby.png"></img>
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
 		<p id="expire"> EXP: 9999 </p>
@@ -19,8 +22,8 @@
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
 		var correct = 0
-		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson "]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "]];
+		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " timotha, skittlus ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			console.log(randomizer)
@@ -41,7 +44,7 @@
 			document.getElementById("name").innerHTML = passport[0]
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 65) {
+			if (randomizer <= 80) {
 				passport[1] = entrants[currentEntrant][2];
 				console.log(passport[1])
 			} else {
