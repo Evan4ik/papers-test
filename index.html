@@ -15,13 +15,28 @@
 	<script>
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
-		randomizer = Math.floor(Math.random() * 11);
-		if (randomizer <= 5) {
-		  passport[0] = "ant, axo"	
-		} else {
-			passport[0] = "mr, stark"
+		random("ant, axo", "stark, mr", "name")
+		random("a", "a", "gender")
+		function random(n1, n2, whatToRandom) {
+		if (whatToRandom == "name") { //name
+			randomizer = Math.floor(Math.random() * 11);
+			if (randomizer <= 5) {
+		 	 	passport[0] = n1	
+			} else {
+				passport[0] = n2
+			}
+			document.getElementById("name").innerHTML = passport[0]
+		} else if (whatToRandom == "gender") { //gender
+			randomizer = Math.floor(Math.random() * 16);
+			if (randomizer <= 5) {
+				passport[1] = "M"
+			} else if (randomizer <= 10) {
+				passport[1] = "F"
+			} else {
+				passport[1] = "?"
+			}
+		document.getElementById("gender").innerHTML = passport[1]
 		}
-		document.getElementById("name").innerHTML = passport[0]
 	</script>
 	</body>
 </html>
