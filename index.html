@@ -74,6 +74,7 @@
 			}
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
+			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
@@ -95,6 +96,7 @@
 			}
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
+			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
@@ -103,6 +105,7 @@
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
+			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
