@@ -133,7 +133,7 @@
 		let lastEntrant = currentEntrant;
 		function approve() {
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML && passport[2][0] >= time[0] && passport[2][1] >= time[1] && passport[2][2] >= time[2]) {
+			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML && passport[2][0] >= time[0] && passport[2][1] >= time[1] && passport[2][2] >= time[2] || passport[2][0] <= time[0] && passport[2][1] >= time[1] && passport[2][2] >= time[2]) {
 				correct += 1
 			}  else {
 				correct -= 1
