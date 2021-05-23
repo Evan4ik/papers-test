@@ -76,7 +76,7 @@
 			currentEntrant = randomizer
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
-				generateEntrant
+				generateEntrant()
 			}
 		}
 		function denied() {
@@ -97,15 +97,15 @@
 			currentEntrant = randomizer
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
-				generateEntrant
+				generateEntrant()
 			}
 		}
-		function generateEntrant {
+		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
 			entrants[randomizer][0].style.display = "block";
 			if (currentEntrant == lastEntrant) {
-				generateEntrant
+				generateEntrant()
 			}
 		}
 	</script>
