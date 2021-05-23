@@ -14,7 +14,7 @@
     <img id="entrant4" width="200" height="200" src="images/gramby.png"></img>
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
-		<p id="expire"> EXP: 9999 </p>
+		<p id="expire">ENTER BY: 0,0,0 </p>
 <center>
 	<button onclick="approve()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/approved.png"> </img></button>
 	<button onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/denied.png"> </img></button>
@@ -23,8 +23,8 @@
 	<script>
 		var d = new Date();
 		var time = [0, 0, 0];
-		time[0] = d.getMonth();
-		time[1] = d.getDate();
+		time[0] = d.getDate();
+		time[1] = d.getMonth() + 1;
 		time[2] = d.getFullYear();
 		document.getElementById("clock").innerHTML = time
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
@@ -40,6 +40,7 @@
 		}
 		random("name")
 		random("gender")
+		random("expire")
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
 			randomizer = Math.floor(Math.random() * 101);
@@ -66,6 +67,63 @@
 				}
 			}
 		document.getElementById("gender").innerHTML = passport[1]
+		} else if (whatToRandom == "expire") {
+			let fakeTime = [time[0], time[1], time[2]];
+			randomizer = Math.floor(Math.random() * 101);
+			if (randomizer <= 75) {
+				randomizer = Math.floor(Math.random() * 61);
+				fakeTime[0] += randomizer;
+				if (fakeTime[0] > 30) {
+					fakeTime[0] -= 30;
+					fakeTime[1] += 1;
+					if (fakeTime[1] > 12) {
+						fakeTime[2] += 1;
+						fakeTime[1] = 1;
+					}
+					if (fakeTime[0] == 0) {
+						fakeTime[0] = 1;
+					}
+				}
+				if (fakeTime[0] > 30) {
+					fakeTime[0] -= 30;
+					fakeTime[1] += 1;
+					if (fakeTime[1] > 12) {
+						fakeTime[2] += 1;
+						fakeTime[1] = 1;
+					}
+					if (fakeTime[0] == 0) {
+						fakeTime[0] = 1;
+					}
+				}
+				passport[2] = time
+			} else {
+				randomizer = Math.floor(Math.random() * 61);
+				fakeTime[0] -= randomizer;
+				if (fakeTime[0] < 1) {
+					fakeTime[0] += 30;
+					fakeTime[1] -= 1;
+					if (fakeTime[1] < 1) {
+						fakeTime[2] -= 1;
+						fakeTime[1] = 12;
+					}
+					if (fakeTime[0] == 0) {
+						fakeTime[0] = 31;
+					}
+				}
+				if (fakeTime[0] < 1) {
+					fakeTime[0] += 30;
+					fakeTime[1] -= 1;
+					if (fakeTime[1] < 1) {
+						fakeTime[2] -= 1;
+						fakeTime[1] = 12;
+					}
+					if (fakeTime[0] == 0) {
+						fakeTime[0] = 31;
+					}
+				}
+				passport[2] = time
+			}
+			document.getElementById("expire").innerHTML = passport[2]
 		}
 		}
 		let lastEntrant = currentEntrant
