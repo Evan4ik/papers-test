@@ -43,6 +43,7 @@
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 65) {
 				passport[1] = entrants[currentEntrant][2];
+				console.log(passport[1])
 				if (passport[1] == "SEX: M ") {
 					passport[1] = "M"
 				} else if (passport[1] == "SEX: F ") {
