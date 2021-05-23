@@ -7,7 +7,7 @@
   </head>
   <body>
     <img id="entrant0" src="images/axoant.png"> </img>
-    <img id="entrant1" src="images/axoant.png"> </img>
+    <img id="entrant1" src="images/yowhat.png"> </img>
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
 		<p id="expire"> EXP: 9999 </p>
@@ -19,32 +19,46 @@
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
 		var correct = 0
-		var entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1")]];
+		const nameList = ["ant, axo", "stark, mr", "jake, johnson"]
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			console.log(randomizer)
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
 		}
-		random("ant, axo", "stark, mr", "name")
-		random("a", "a", "gender")
-		function random(n1, n2, whatToRandom) {
+		random("name")
+		random("gender")
+		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
-			randomizer = Math.floor(Math.random() * 11);
-			if (randomizer <= 5) {
-		 	 	passport[0] = n1	
+			randomizer = Math.floor(Math.random() * 101);
+			if (randomizer <= 85) {
+		 	 	passport[0] = nameList[currentEntrant];
 			} else {
-				passport[0] = n2
+				randomizer = Math.floor(Math.random() * nameList.length);
+				passport[0] = nameList[randomizer];
 			}
 			document.getElementById("name").innerHTML = passport[0]
 		} else if (whatToRandom == "gender") { //gender
-			randomizer = Math.floor(Math.random() * 16);
-			if (randomizer <= 5) {
-				passport[1] = "M"
-			} else if (randomizer <= 10) {
-				passport[1] = "F"
+			randomizer = Math.floor(Math.random() * 101);
+			if (randomizer <= 65) {
+				passport[1] = entrants[currentEntrant][2];
+				if (passport[1] == "SEX: M ") {
+					passport[1] = "M"
+				} else if (passport[1] == "SEX: F ") {
+					passport[1] = "F"
+				} else {
+					passport[1] == "?"
+				}
 			} else {
-				passport[1] = "?"
+				randomizer = Math.floor(Math.random() * 31);
+				if (randomizer <= 10) {
+		 	 		passport[1] = "M";
+				} else if (randomizer <= 20) {
+					passport[1] = "F";
+				} else {
+					passport[1] = "?":
+				}
 			}
 		document.getElementById("gender").innerHTML = "SEX: " + passport[1]
 		}
@@ -57,7 +71,31 @@
 				correct -= 1
 				console.log(correct)
 			}
-			currentEntrant ++
+			random("name")
+			random("gender")
+			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
+				entrants[randomizer][0].style.display = "none";
+			}
+			randomizer = Math.floor(Math.random() * entrants.length);
+			currentEntrant = randomizer
+			entrants[randomizer][0].style.display = "block";
+		}
+		function denied() {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
+				correct += 1
+				console.log(correct)
+			} else {
+				correct -= 1
+				console.log(correct)
+			}
+			random("name")
+			random("gender")
+			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
+				entrants[randomizer][0].style.display = "none";
+			}
+			randomizer = Math.floor(Math.random() * entrants.length);
+			currentEntrant = randomizer
+			entrants[randomizer][0].style.display = "block";
 		}
 	</script>
 	</body>
