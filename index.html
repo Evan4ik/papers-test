@@ -16,8 +16,8 @@
 	<script>
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
-		var entrants = [document.getElementById("entrant0")];
-		for (randomizer = 0, randomizer <= entrants.length, randomizer ++) {
+		var entrants = [document.getElementById("entrant0"), document.getElementById("entrant1")];
+		for (randomizer = 0; randomizer <= entrants.length; randomizer ++) {
 			entrants[randomizer].style.display = "none";
 			entrants[0].style.display = "block";
 		}
