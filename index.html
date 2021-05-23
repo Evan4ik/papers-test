@@ -57,8 +57,9 @@
 		document.getElementById("gender").innerHTML = passport[1]
 		}
 		}
+		let lastEntrant = currentEntrant
 		function approve() {
-			let lastEntrant = currentEntrant
+			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				correct += 1
 				console.log(correct)
@@ -79,7 +80,7 @@
 			}
 		}
 		function denied() {
-			let lastEntrant = currentEntrant
+			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 				correct += 1
 				console.log(correct)
