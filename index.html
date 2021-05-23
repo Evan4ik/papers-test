@@ -34,7 +34,6 @@
 		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " timotha, skittlus ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
-			console.log(randomizer)
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
 		}
@@ -131,10 +130,8 @@
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				correct += 1
-				console.log(correct)
 			}  else {
 				correct -= 1
-				console.log(correct)
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -154,10 +151,8 @@
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 				correct += 1
-				console.log(correct)
 			} else {
 				correct -= 1
-				console.log(correct)
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
