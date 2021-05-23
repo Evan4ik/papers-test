@@ -27,7 +27,7 @@
 		time[1] = d.getMonth() + 1;
 		time[2] = d.getFullYear();
 		document.getElementById("clock").innerHTML = time
-		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
+		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0]];
 		var randomizer = 0
 		var correct = 0
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
@@ -93,7 +93,9 @@
 						fakeTime[0] = 1;
 					}
 				}
-				passport[2] = fakeTime
+				for (randomizer = 0; randomizer < 2; randomizer ++) {
+					passport[2][randomizer] = fakeTime[randomizer]
+				}
 			} else {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] -= randomizer;
@@ -119,22 +121,17 @@
 						fakeTime[0] = 31;
 					}
 				}
-				passport[2] = fakeTime
+				for (randomizer = 0; randomizer < 3; randomizer ++) {
+					passport[2][randomizer] = fakeTime[randomizer]
+				}
 			}
 			document.getElementById("expire").innerHTML = "ENTER BY: " + passport[2]
 		}
 		}
 		let lastEntrant = currentEntrant;
-		let timeCheck = String(time[0])
-		timeCheck += time[1]
-		timeCheck += time[2]
 		function approve() {
-			timeCheck = String(time[0])
-			timeCheck += time[1]
-			timeCheck += time[2]
-			console.log(timeCheck)
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML && passport[2] >=) {
+			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML && passport[2][0] >= time[0] && passport[2][1] >= time[1] && passport[2][2] >= time[2]) {
 				correct += 1
 			}  else {
 				correct -= 1
@@ -155,9 +152,6 @@
 			}
 		}
 		function denied() {
-			timeCheck = String(time[0])
-			timeCheck += time[1]
-			timeCheck += time[2]
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 				correct += 1
