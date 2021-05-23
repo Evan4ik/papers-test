@@ -54,7 +54,6 @@
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 80) {
 				passport[1] = entrants[currentEntrant][2];
-				console.log(passport[1])
 			} else {
 				randomizer = Math.floor(Math.random() * 31);
 				if (randomizer <= 10) {
@@ -125,10 +124,17 @@
 			document.getElementById("expire").innerHTML = "ENTER BY: " + passport[2]
 		}
 		}
-		let lastEntrant = currentEntrant
+		let lastEntrant = currentEntrant;
+		let timeCheck = String(time[0])
+		timeCheck += time[1]
+		timeCheck += time[2]
 		function approve() {
+			timeCheck = String(time[0])
+			timeCheck += time[1]
+			timeCheck += time[2]
+			console.log(timeCheck)
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
+			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML && passport[2] >=) {
 				correct += 1
 			}  else {
 				correct -= 1
@@ -143,11 +149,15 @@
 			entrants[randomizer][0].style.display = "block";
 			random("name")
 			random("gender")
+			random("expire")
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
 		}
 		function denied() {
+			timeCheck = String(time[0])
+			timeCheck += time[1]
+			timeCheck += time[2]
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 				correct += 1
