@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
   </head>
   <body>
+	  <p id="streak"> 0 </p>
     <img id="entrant0" width="200" height="200" src="images/axoant.png"> </img>
     <img id="entrant1" width="200" height="200" src="images/yowhat.PNG"> </img>
     <img id="entrant2" width="200" height="200" src="images/agressiv.png"></img>
@@ -19,6 +20,10 @@
 	<button onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/denied.png"> </img></button>
 </center>
 	<script>
+		var time = [0, 0, 0]
+		time[0] = getDate()
+		time[1] = getMonth()
+		time[2] = getFullYear()
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
 		var correct = 0
@@ -73,6 +78,7 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
+			document.getElementById("streak").innerHTML = correct
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
 			entrants[lastEntrant][0].style.display = "none";
@@ -95,6 +101,7 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
+			document.getElementById("streak").innerHTML = correct
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
 			entrants[lastEntrant][0].style.display = "none";
