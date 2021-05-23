@@ -8,10 +8,20 @@
   <body>
     <img src="images/axoant.png"> </img>
 	<right>
-		<p id="name"> axo, ant </p>
+		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
 		<p id="expire"> EXP: 9999 </p>
 	</right>
+	<script>
+		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
+		var randomizer = 0
+		randomizer = Math.floor(Math.random() * 11);
+		if (randomizer <= 5) {
+		  passport[0] = "ant, axo"	
+		} else {
+			passport[0] = "mr, stark"
+		}
+		document.getElementById("name").innerHTML = passport[0]
 	</body>
 </html>
     
