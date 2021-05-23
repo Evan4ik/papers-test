@@ -71,10 +71,11 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
-			while (currentEntrant != lastEntrant) {
-				randomizer = Math.floor(Math.random() * entrants.length);
-				currentEntrant = randomizer
-				entrants[randomizer][0].style.display = "block";
+			randomizer = Math.floor(Math.random() * entrants.length);
+			currentEntrant = randomizer
+			entrants[randomizer][0].style.display = "block";
+			if (currentEntrant == lastEntrant) {
+				generateEntrant
 			}
 		}
 		function denied() {
@@ -91,10 +92,19 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
-			while (currentEntrant != lastEntrant) {
-				randomizer = Math.floor(Math.random() * entrants.length);
-				currentEntrant = randomizer
-				entrants[randomizer][0].style.display = "block";
+			randomizer = Math.floor(Math.random() * entrants.length);
+			currentEntrant = randomizer
+			entrants[randomizer][0].style.display = "block";
+			if (currentEntrant == lastEntrant) {
+				generateEntrant
+			}
+		}
+		function generateEntrant {
+			randomizer = Math.floor(Math.random() * entrants.length);
+			currentEntrant = randomizer
+			entrants[randomizer][0].style.display = "block";
+			if (currentEntrant == lastEntrant) {
+				generateEntrant
 			}
 		}
 	</script>
