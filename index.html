@@ -19,7 +19,7 @@
 		var passport = [document.getElementById("name"), document.getElementById("gender"), document.getElementById("expire")];
 		var randomizer = 0
 		var correct = 0
-		var entrants = [[document.getElementById("entrant0"), "ant, axo", "?"], [document.getElementById("entrant1")]];
+		var entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ?"], [document.getElementById("entrant1")]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer <= entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
@@ -49,7 +49,7 @@
 		}
 		}
 		function approve() {
-			if (entrants[currentEntrant][1] == document.getElementById("name") && entrants[currentEntrant][2] == document.getElementById("gender")) {
+			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				correct += 1
 				console.log(correct)
 			}  else {
