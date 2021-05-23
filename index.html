@@ -58,6 +58,7 @@
 		}
 		}
 		function approve() {
+			let lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				correct += 1
 				console.log(correct)
@@ -70,11 +71,14 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
-			randomizer = Math.floor(Math.random() * entrants.length);
-			currentEntrant = randomizer
-			entrants[randomizer][0].style.display = "block";
+			while (currentEntrant != lastEntrant) {
+				randomizer = Math.floor(Math.random() * entrants.length);
+				currentEntrant = randomizer
+				entrants[randomizer][0].style.display = "block";
+			}
 		}
 		function denied() {
+			let lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 				correct += 1
 				console.log(correct)
@@ -87,9 +91,11 @@
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
-			randomizer = Math.floor(Math.random() * entrants.length);
-			currentEntrant = randomizer
-			entrants[randomizer][0].style.display = "block"; //whats that sound? who dat be? huh?
+			while (currentEntrant != lastEntrant) {
+				randomizer = Math.floor(Math.random() * entrants.length);
+				currentEntrant = randomizer
+				entrants[randomizer][0].style.display = "block";
+			}
 		}
 	</script>
 	</body>
