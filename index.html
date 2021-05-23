@@ -67,8 +67,6 @@
 				correct -= 1
 				console.log(correct)
 			}
-			random("name")
-			random("gender")
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
@@ -76,6 +74,8 @@
 			currentEntrant = randomizer
 			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
+			random("name")
+			random("gender")
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
@@ -89,8 +89,6 @@
 				correct -= 1
 				console.log(correct)
 			}
-			random("name")
-			random("gender")
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
@@ -98,6 +96,8 @@
 			currentEntrant = randomizer
 			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
+			random("name")
+			random("gender")
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
@@ -107,6 +107,8 @@
 			currentEntrant = randomizer
 			entrants[lastEntrant][0].style.display = "none";
 			entrants[randomizer][0].style.display = "block";
+			random("name")
+			random("gender")
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
