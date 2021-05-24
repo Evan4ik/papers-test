@@ -31,7 +31,7 @@
 	   </style>
   </head>
   <body>
-	  <p id="cash"></p>   <p><b>$</b></p>
+	  <b><p id="cash"></p></b>
     <img id="entrant0" width="200" height="200" src="images/axoant.png"> </img>
     <img id="entrant1" width="200" height="200" src="images/yowhat.PNG"> </img>
     <img id="entrant2" width="200" height="200" src="images/agressiv.png"></img>
@@ -72,7 +72,7 @@
 		if (money == null) {
 			money = 100;
 		}
-		document.getElementById("cash").innerHTML = money
+		document.getElementById("cash").innerHTML = money + "$"
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
 		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
 		var currentEntrant = 0;
@@ -274,7 +274,7 @@
 					money /= amount;
 					break;
 			}	
-			document.getElementById("cash").innerHTML = money
+			document.getElementById("cash").innerHTML = money + "$"
 			localStorage.setItem("tokens", money)
 		}
 	</script>
