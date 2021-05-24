@@ -282,23 +282,21 @@
 			}
 		}
 		
-		function startTimer() {
-		   while (timerTime <= 90) {
-			setTimeout(() => {
-				console.log("funny")
-				timerTime ++;
-			; }, 1500);
-		   }
-		   if (timerTime > 6) {
+ const startTimer = function() {
+ autoMps = setInterval(function(){
+		    timerTime ++;
+	            if (timerTime >= 90) {
 			error.style.display = "block"
 			document.getElementById("reason").innerHTML = "Verfying documents took too long. -10$ penalty."
 			updateMoney("subtract", 10);
 			timerTime = 0;
 			setTimeout(() => {
 				error.style.display = "none"
-			; }, 5000);
-		   }
-		}
+			; }, 5000);    
+		    }
+		    }
+             		}, 1000);
+            		}
 		function updateMoney(what, amount) {
 			money = Number(money)
 			switch (what) {
