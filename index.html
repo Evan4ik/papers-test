@@ -190,7 +190,7 @@
 				}
 			}  else {
 				correct -= 1
-				else if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML) {
+				if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);
