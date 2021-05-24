@@ -83,7 +83,7 @@
 		random("name")
 		random("gender")
 		random("expire")
-		startTimer()
+		startTimer.call()
 		
 		//functinos
 		
@@ -284,6 +284,7 @@
 		
  const startTimer = function() {
  autoMps = setInterval(function(){
+	 	     console.log("bog")
 		    timerTime ++;
 	            if (timerTime >= 90) {
 			error.style.display = "block"
