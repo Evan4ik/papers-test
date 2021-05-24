@@ -285,8 +285,9 @@
 		function startTimer() {
 		   while (timerTime <= 90) {
 			setTimeout(() => {
+				console.log("funny")
 				timerTime ++;
-			; }, 1000);
+			; }, 1500);
 		   }
 		   if (timerTime > 6) {
 			error.style.display = "block"
