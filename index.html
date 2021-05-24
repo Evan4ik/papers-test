@@ -177,6 +177,9 @@
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][2] > time[2]) {
 					correct += 1
+					if (correct % 10) {
+						updateMoney("add", 10);   
+					}
 				}  else {
 				correct -= 1
 					if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
@@ -203,7 +206,13 @@
 						setTimeout(() => {
 						error.style.display = "none"
 						; }, 5000);   
-					}
+				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
+					error.style.display = "block"
+					document.getElementById("reason").innerHTML = "Invalid entry date."
+					setTimeout(() => {
+						error.style.display = "none"
+						; }, 5000);
+					} 
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -223,6 +232,9 @@
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					correct += 1
+					if (correct % 10) {
+						updateMoney("add", 10);   
+					}
 				} else {
 					correct -= 1
 					error.style.display = "block"
