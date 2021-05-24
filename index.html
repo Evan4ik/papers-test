@@ -53,6 +53,22 @@
 <p id="clock"><b> 0, 0, 0 </b></p>
 </center>
 	<script>
+		 const startTimer = function() {
+ autoMps = setInterval(function(){
+	 	     console.log("bog")
+		    timerTime ++;
+	            if (timerTime >= 90) {
+			error.style.display = "block"
+			document.getElementById("reason").innerHTML = "Verfying documents took too long. -10$ penalty."
+			updateMoney("subtract", 10);
+			timerTime = 0;
+			setTimeout(() => {
+				error.style.display = "none"
+			; }, 5000);    
+		    }
+             		}, 1000);
+            		}
+		 
 		var d = new Date();
 		var time = [0, 0, 0];
 		time[0] = d.getDate();
@@ -282,21 +298,6 @@
 			}
 		}
 		
- const startTimer = function() {
- autoMps = setInterval(function(){
-	 	     console.log("bog")
-		    timerTime ++;
-	            if (timerTime >= 90) {
-			error.style.display = "block"
-			document.getElementById("reason").innerHTML = "Verfying documents took too long. -10$ penalty."
-			updateMoney("subtract", 10);
-			timerTime = 0;
-			setTimeout(() => {
-				error.style.display = "none"
-			; }, 5000);    
-		    }
-             		}, 1000);
-            		}
 		function updateMoney(what, amount) {
 			money = Number(money)
 			switch (what) {
