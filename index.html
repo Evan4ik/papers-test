@@ -45,7 +45,7 @@
 </div>
 <div id="error">
 	<p> ErrorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤX </p>
-	<p> yo mamma!! </p>
+	<p id="reason"> yo mamma!! </p>
 </div>
 <center>
 	<br><br><br><br><br><br><br>
@@ -61,6 +61,8 @@
 		time[2] = d.getFullYear();
 		document.getElementById("clock").innerHTML = time
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0]];
+		const error = document.getElementById("error")
+		error.style.display = "none";
 		var randomizer = 0
 		var correct = localStorage.getItem("streak")
 		var money = localStorage.getItem("money")
