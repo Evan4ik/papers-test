@@ -83,6 +83,11 @@
 		random("name")
 		random("gender")
 		random("expire")
+		startTimer()
+		
+		//functinos
+		
+		
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
 			randomizer = Math.floor(Math.random() * 101);
@@ -172,7 +177,9 @@
 		}
 		}
 		let lastEntrant = currentEntrant;
+		var timerTime = 0;
 		function approve() {
+			timerStarted = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][2] > time[2]) {
@@ -184,7 +191,8 @@
 				correct -= 1
 					if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					error.style.display = "block"
-					document.getElementById("reason").innerHTML = "Invalid entry date."
+					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
+					updateMoney("subtract", 5);
 					setTimeout(() => {
 						error.style.display = "none"
 						; }, 5000);
@@ -208,7 +216,8 @@
 						; }, 5000);   
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					error.style.display = "block"
-					document.getElementById("reason").innerHTML = "Invalid entry date."
+					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
+					updateMoney("subtract", 5);
 					setTimeout(() => {
 						error.style.display = "none"
 						; }, 5000);
@@ -227,8 +236,10 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
+
 		}
 		function denied() {
+			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					correct += 1
@@ -269,6 +280,20 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
+		function startTimer() {
+		   while (timerTime <= 90) {
+			setTimeout(() => {
+				timerTime ++;
+			; }, 1000);
+		   }
+		   if (timerTime > 6) {
+			error.style.display = "block"
+			document.getElementById("reason").innerHTML = "Verfying documents took too long. -10$ penalty."
+			updateMoney("subtract", 10);
+			timerTime = 0;
+			setTimeout(() => {
+				error.style.display = "none"
+			; }, 5000);
 		}
 		function updateMoney(what, amount) {
 			money = Number(money)
