@@ -65,7 +65,7 @@
 		error.style.display = "none";
 		var randomizer = 0
 		var correct = localStorage.getItem("streak")
-		var money = localStorage.getItem("money")
+		var money = localStorage.getItem("tokens")
 		money = Number(money)
 		if (correct == null) {
 			correct = 0;	
@@ -278,7 +278,7 @@
 					break;
 			}	
 			document.getElementById("cash").innerHTML = money
-			localStorage.setItem("money", money)
+			localStorage.setItem("tokens", money)
 		}
 	</script>
 	</body>
