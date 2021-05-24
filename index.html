@@ -4,6 +4,20 @@
 	 <title> please! papers! </title>
     <meta name ="description" content="just a test"
     <meta charset="UTF-8">
+	   <style>
+		   #passport {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 8px #d48ce2 solid;
+        border-radius: 32px;
+        display: inline-block;
+        background: #ecb2f7;
+        padding: 16px;
+        padding-bottom: 48px;
+      }
+	   </style>
   </head>
   <body>
 	  <p id="streak"> 0 </p>
@@ -12,9 +26,11 @@
     <img id="entrant2" width="200" height="200" src="images/agressiv.png"></img>
     <img id="entrant3" width="200" height="200" src="images/timothy.png"></img>
     <img id="entrant4" width="200" height="200" src="images/gramby.png"></img>
+<div id="passport">
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
 		<p id="expire">ENTER BY: 0,0,0 </p>
+</div>
 <center>
 	<button onclick="approve()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/approved.png"> </img></button>
 	<button onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/denied.png"> </img></button>
