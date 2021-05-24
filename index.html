@@ -205,14 +205,14 @@
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);
 						setTimeout(() => {
-						error.style.display = "none"
+							error.style.display = "none"
 						; }, 5000);   
 				} else if (entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
 						updateMoney("subtract", 5);
 						setTimeout(() => {
-						error.style.display = "none"
+							error.style.display = "none"
 						; }, 5000);   
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					error.style.display = "block"
@@ -220,7 +220,7 @@
 					updateMoney("subtract", 5);
 					setTimeout(() => {
 						error.style.display = "none"
-						; }, 5000);
+					; }, 5000);
 					} 
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
@@ -280,6 +280,8 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
+		}
+		
 		function startTimer() {
 		   while (timerTime <= 90) {
 			setTimeout(() => {
