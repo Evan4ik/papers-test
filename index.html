@@ -54,6 +54,7 @@
     <img id="entrant2" width="200" height="200" src="images/agressiv.png"></img>
     <img id="entrant3" width="200" height="200" src="images/timothy.png"></img>
     <img id="entrant4" width="200" height="200" src="images/gramby.png"></img>
+    <img id="entrant5" width="200" height="200" src="images/cat.png"></img>
 <div id="passport">
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
@@ -126,8 +127,8 @@
 			localStorage.setItem("trophys", trophys)
 			updateMoney("set", 100);
 		}
-		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
+		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony " " pack, numb ", " let, frik ", " tot, tater "]
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
@@ -148,7 +149,7 @@
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
 			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 85) {
+			if (randomizer <= 75) {
 		 	 	passport[0] = nameList[currentEntrant];
 			} else {
 				randomizer = Math.floor(Math.random() * nameList.length);
@@ -157,7 +158,7 @@
 			document.getElementById("name").innerHTML = passport[0]
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 80) {
+			if (randomizer <= 70) {
 				passport[1] = entrants[currentEntrant][2];
 			} else {
 				randomizer = Math.floor(Math.random() * 31);
