@@ -26,6 +26,16 @@
         display: inline-block;
         background: #ffffff;
         padding: 2px;
+      } 
+  #monitor {
+        position: fixed;
+        top: 37.5%;
+        right: 1%;
+        transform: translate(-50%, -50%);
+	border: 5px #000000 solid;
+        display: inline-block;
+        background: #00ff00;
+        padding: 2px;
       }  
 	   
 	   </style>
@@ -64,7 +74,6 @@
 	<script>
 		 const startTimer = function() {
  autoMps = setInterval(function(){
-	            console.log(timerTime)
 		    timerTime ++;
 	            if (timerTime >= 90) {
 			error.style.display = "block"
@@ -100,7 +109,7 @@
 		}
 		updateMoney("add", 0);
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
+		const entrants = [[document.querySelectorAll("[id='entrant0']"), " ant, axo ", "SEX: ? "], [document.querySelectorAll("[id='entrant1']"), " stark, mr ", "SEX: M "], [document.querySelectorAll("[id='entrant2']"), " jake, johnson ", "SEX: M "], [document.querySelectorAll("[id='entrant3']"), " skittlus, timotha ", "SEX: ? "], [document.querySelectorAll("[id='entrant4']"), " gramby ", "SEX: ? "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
