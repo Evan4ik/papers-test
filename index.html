@@ -64,6 +64,7 @@
 	<script>
 		 const startTimer = function() {
  autoMps = setInterval(function(){
+	            console.log(timerTime)
 		    timerTime ++;
 	            if (timerTime >= 90) {
 			error.style.display = "block"
@@ -204,7 +205,7 @@
 		let lastEntrant = currentEntrant;
 		var timerTime = 0;
 		function approve() {
-			timerStarted = 0;
+			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][2] > time[2]) {
