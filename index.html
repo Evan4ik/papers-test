@@ -87,7 +87,7 @@ body {
 		<p id="expire">ENTER BY: 0,0,0 </p>
 </div>
 <div id="error">
-	<p> ErrorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤX </p>
+	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button  style="border:1px solid transparent; background-color: transparent;"> onclick='uiToggle("error")'>X </button></p>
 	<p id="reason"> yo mamma!! </p>
 </div>
 <div id="monitor">
@@ -120,9 +120,6 @@ body {
 			document.getElementById("reason").innerHTML = "Verfying documents took too long. -10$ penalty."
 			updateMoney("subtract", 10);
 			timerTime = 0;
-			setTimeout(() => {
-				error.style.display = "none"
-			; }, 5000);    
 		    }
 	 } 
              		}, 1000);
@@ -289,9 +286,6 @@ body {
 					error.style.display = "block"
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
-					setTimeout(() => {
-						error.style.display = "none"
-						; }, 5000);
 					} 
 				}
 			}  else {
@@ -299,24 +293,15 @@ body {
 				if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
-					        updateMoney("subtract", 5);
-						setTimeout(() => {
-							error.style.display = "none"
-						; }, 5000);   
+					        updateMoney("subtract", 5);  
 				} else if (entrants[currentEntrant][2] != document.getElementById("gender").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
-						updateMoney("subtract", 5);
-						setTimeout(() => {
-							error.style.display = "none"
-						; }, 5000);   
+						updateMoney("subtract", 5); 
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					error.style.display = "block"
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
-					setTimeout(() => {
-						error.style.display = "none"
-					; }, 5000);
 					} 
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
@@ -354,9 +339,6 @@ body {
 					error.style.display = "block"
 					document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
 					updateMoney("subtract", 5);
-					setTimeout(() => {
-					error.style.display = "none"
-					; }, 5000);  
 				}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -390,7 +372,13 @@ body {
 				generateEntrant()
 			}
 		}
-		
+		function uiToggle(whatotoggle) {
+		switch (whattotoggle) {
+			case "error":
+				error.style.display = "none";
+				break;
+		}
+		}
 		function updateMoney(what, amount) {
 			money = Number(money)
 			switch (what) {
