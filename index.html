@@ -94,7 +94,11 @@
 	 } 
              		}, 1000);
             		}
-		 
+		var trophys = localStorage.getItem("trophys")
+		if (trophys == 0) {
+			trophys = [0, 0]
+			localStorage.setItem("trophys", trophys)
+		}
 		var d = new Date();
 		var time = [0, 0, 0];
 		document.getElementById("bankrupt").style.display = "none";
@@ -112,10 +116,10 @@
 		if (correct == null) {
 			correct = 0;	
 		}
-		if (money == null) {
-			console.log(money)
+		if (trophys[0] == 0) {
+			trophys[0] = 1;
+			localStorage.setItem("trophys", trophys)
 			updateMoney("set", 100);
-			console.log(money)
 		}
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " pack, numb ", " let, frik ", " tot, tater "]
 		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "]];
