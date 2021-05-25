@@ -61,6 +61,7 @@
 </div>
 <div id="monitor">
 	<center><h2 id="webName"> name </h2></center>
+	<right><img id="webImage" width="200" height="200" src="images/axoant.png"></img></right>
 	<h3 id="webGender">SEX: </h3>
 </div>
 <center>
@@ -134,6 +135,7 @@
 		let i = nameList.indexOf(passport[0]);
 		document.getElementById("webName").innerHTML = entrants[i][1]
 		document.getElementById("webGender").innerHTML = entrants[i][2]
+		document.getElementById("webImage").src = entrants[i][0].src
 		startTimer.call()
 		
 		//functinos
