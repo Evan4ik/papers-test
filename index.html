@@ -122,6 +122,9 @@
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
 		}
+		let i = nameList.indexOf(passport[0]);
+		document.getElementById("webName").innerHTML = entrants[i][1]
+		document.getElementById("webGender").innerHTML = entrants[i][2]
 		random("name")
 		random("gender")
 		random("expire")
@@ -291,7 +294,7 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
-			let i = names.indexOf(passport[0]);
+			let i = nameList.indexOf(passport[0]);
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webGender").innerHTML = entrants[i][2]
 
@@ -327,7 +330,7 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
-			let i = names.indexOf(passport[0]);
+			let i = nameList.indexOf(passport[0]);
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webGender").innerHTML = entrants[i][2]
 		}
