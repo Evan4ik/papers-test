@@ -76,9 +76,9 @@ body {
 	<p id="reason"> yo mamma!! </p>
 </div>
 <div id="monitor">
-	<center><h2 id="webName"> name </h2></center>
+	<center><h2 id="webName"> ant, axo </h2></center>
 	<right><img id="webImage" width="200" height="200" class="webPhoto" src="images/axoant.png"></img></right>
-	<h3 id="webGender">SEX: </h3>
+	<h3 id="webGender">SEX: ? </h3>
 </div>
 <center>
 	<br><br><br><br><br><br><br>
@@ -148,12 +148,6 @@ body {
 		random("name")
 		random("gender")
 		random("expire")
-		document.getElementById("webName").innerHTML = "This person does not exist"
-		document.getElementById("webGender").innerHTML = "This person could not be found."
-		let i = nameList.indexOf(passport[0]);
-		document.getElementById("webName").innerHTML = entrants[i][1]
-		document.getElementById("webGender").innerHTML = entrants[i][2]
-		document.getElementById("webImage").src = entrants[i][0].src
 		startTimer.call()
 		
 		//functinos
