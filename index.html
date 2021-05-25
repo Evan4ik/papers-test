@@ -220,13 +220,7 @@
 					if (cCheck == 0) {
 						updateMoney("add", 10);
 					}
-				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1]) {
-					correct += 1
-					let cCheck = correct % 10;
-					if (cCheck == 0) {
-						updateMoney("add", 10);
-					}
-				} else if (passport[2][2] > time[2]) {
+				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] && passport[2][2] > time[2]) {
 					correct += 1
 					let cCheck = correct % 10;
 					if (cCheck == 0) {
