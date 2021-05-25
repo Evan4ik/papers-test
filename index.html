@@ -57,12 +57,12 @@
 <div id="bankrupt">
 
 	<center> <p> <b> Today is a sad day.<br> Your border has went bankrupt. You can no longer operate. </b></p></center>
+	<button onclick='updateMoney("set", 100)' style="border:1px solid transparent; background-color: transparent;"> <img src="images/rEstArT.png"> </img></button>
 </div>
 		
 	<script>
 		 const startTimer = function() {
  autoMps = setInterval(function(){
-	 	     console.log("bog")
 		    timerTime ++;
 	            if (timerTime >= 90) {
 			error.style.display = "block"
@@ -323,6 +323,10 @@
 					break;
 				case "set":
 					money = amount;
+					if (document.getElementById("base").style.display == "none") {
+						document.getElementById("base").style.display = "block";
+						document.getElementById("bankrupt").style.display = "none";
+					}
 					break;
 			}	
 			document.getElementById("cash").innerHTML = money + "$"
