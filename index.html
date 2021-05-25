@@ -35,10 +35,10 @@
         transform: translate(-50%, -50%);
 	border: 20px #000000 solid;
         display: inline-block;
-        background: #011020;
+        background: #8bb0d7;
 	height: 700px;
         width: 53%;
-	z-index: 8;
+	z-index: -1;
         padding: 2px;
       }  
 	   </style>
@@ -61,7 +61,8 @@
 	<p id="reason"> yo mamma!! </p>
 </div>
 <div id="monitor">
-	<p> hallo </p>
+	<center><h5 id="webName"> name </h5></center>
+	<h5 id="webGender">SEX: </h5>
 </div>
 <center>
 	<br><br><br><br><br><br><br>
@@ -290,6 +291,9 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
+			let i = names.indexOf(passport[0]);
+			document.getElementById("webName").innerHTML = entrants[i][1]
+			document.getElementById("webGender").innerHTML = entrants[i][2]
 
 		}
 		function denied() {
@@ -323,6 +327,9 @@
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
+			let i = names.indexOf(passport[0]);
+			document.getElementById("webName").innerHTML = entrants[i][1]
+			document.getElementById("webGender").innerHTML = entrants[i][2]
 		}
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
