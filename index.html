@@ -95,7 +95,7 @@
              		}, 1000);
             		}
 		var trophys = localStorage.getItem("trophys")
-		if (trophys == 0) {
+		if (trophys == null) {
 			trophys = [0, 0]
 			localStorage.setItem("trophys", trophys)
 		}
