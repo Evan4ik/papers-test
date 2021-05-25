@@ -56,7 +56,7 @@
 </div>
 <div id="bankrupt">
 
-	<center> <p id="cash" style="color:red"><b> </b></p> <br><p><b> Today is a sad day.<br> Your border has went bankrupt. You can no longer operate. </b></p>
+	<center> <p id="bankCash" style="color:red"><b> </b></p> <br><p><b> Today is a sad day.<br> Your border has went bankrupt. You can no longer operate. </b></p>
 	<button onclick='updateMoney("set", 100)' style="border:1px solid transparent; background-color: transparent;"> <img src="images/rEstArT.png"> </img></button>
 	</center>
 </div>
@@ -348,6 +348,7 @@
 			document.getElementById("cash").innerHTML = money + "$"
 			localStorage.setItem("tokens", money)
 			if (money <= 0) {
+				document.getElementById("bankCash").innerHTML = money + "$"
 				document.getElementById("base").style.display = "none";
 				document.getElementById("bankrupt").style.display = "block";
 			}
