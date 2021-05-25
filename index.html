@@ -31,6 +31,7 @@
 	   </style>
   </head>
   <body>
+<div id="base">
 	  <b><p id="cash"></p></b>
     <img id="entrant0" width="200" height="200" src="images/axoant.png"> </img>
     <img id="entrant1" width="200" height="200" src="images/yowhat.PNG"> </img>
@@ -52,6 +53,12 @@
 	<button onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/denied.png"> </img></button>
 <p id="clock"><b> 0, 0, 0 </b></p>
 </center>
+</div>
+<div id="bankrupt">
+
+	<center> <p> <b> Today is a sad day.<br> Your border has went bankrupt. You can no longer operate. </b></p></center>
+</div>
+		
 	<script>
 		 const startTimer = function() {
  autoMps = setInterval(function(){
@@ -313,9 +320,16 @@
 				case "divide":
 					money /= amount;
 					break;
+				case "set":
+					money = amount;
+					break;
 			}	
 			document.getElementById("cash").innerHTML = money + "$"
 			localStorage.setItem("tokens", money)
+			if (money <= 0) {
+				document.getElementById("base").style.display = "none";
+				document.getElementById("bankrupt").style.display = "block";
+			}
 		}
 	</script>
 	</body>
