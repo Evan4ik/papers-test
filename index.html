@@ -80,6 +80,7 @@
 	<script>
 		 const startTimer = function() {
  autoMps = setInterval(function(){
+	 if (!document.hidden) {
 		    timerTime ++;
 	            if (timerTime >= 90) {
 			error.style.display = "block"
@@ -90,6 +91,9 @@
 				error.style.display = "none"
 			; }, 5000);    
 		    }
+	 } else {
+		console.log("hahafunni")	 
+	 }
              		}, 1000);
             		}
 		 
