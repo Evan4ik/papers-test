@@ -209,7 +209,8 @@
 			if (entrants[currentEntrant][1] == document.getElementById("name").innerHTML && entrants[currentEntrant][2] == document.getElementById("gender").innerHTML) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] >= time[1] || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][2] > time[2]) {
 					correct += 1
-					if (correct % 10) {
+					let cCheck = correct % 10;
+					if (cCheck == 0) {
 						updateMoney("add", 10);   
 					}
 				}  else {
@@ -268,7 +269,8 @@
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					correct += 1
-					if (correct % 10) {
+					let cCheck = correct % 10;
+					if (cCheck == 0) {
 						updateMoney("add", 10);   
 					}
 				} else {
