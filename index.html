@@ -369,11 +369,19 @@ body {
 				generateEntrant()
 			}
 			let i = nameList.indexOf(passport[0]);
-			document.getElementById("webName").innerHTML = "This person does not exist"
-			document.getElementById("webGender").innerHTML = "This person could not be found."
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webImage").src = entrants[i][0].src
 			document.getElementById("webGender").innerHTML = entrants[i][2]
+			if (entrants[i][1] == " random ") {
+				document.getElementById("webName").innerHTML = passport[0]
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 75) {
+					//nothing	
+				} else {
+					randomName()	
+				}
+			}
+		}
 
 		}
 		function denied() {
@@ -408,6 +416,16 @@ body {
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webImage").src = entrants[i][0].src
 			document.getElementById("webGender").innerHTML = entrants[i][2]
+			if (entrants[i][1] == " random ") {
+				document.getElementById("webName").innerHTML = passport[0]
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 75) {
+					//nothing	
+				} else {
+					randomName()	
+				}
+			}
+		}
 		}
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
