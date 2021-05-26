@@ -218,10 +218,6 @@ body {
 		
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
-			const vowels = ["i", "a", "e", "o", "u"];
-			const nameStart = ["e", "m", "g", "j", "l", "a"];
-			const nameMiddle = ["gg", "s", "f", "dd", "m", "ll", "ss", "bb"];
-			const nameEnd = ["ert", "os", "to", "by"]
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 75) {
 		 	 	passport[0] = nameList[currentEntrant];
@@ -232,16 +228,6 @@ body {
 			document.getElementById("name").innerHTML = passport[0]
 			if (passport[0] == " random ") {
 				randomName()
-				function randomName() {
-					randomizer = Math.floor(Math.random() * nameStart.length); // name randomiser
-					passport[0] = " " + nameStart[randomizer]
-					randomizer = Math.floor(Math.random() * vowels.length);
-					passport[0] += vowels[randomizer]
-					randomizer = Math.floor(Math.random() * nameMiddle.length);
-					passport[0] += nameMiddle[randomizer]
-					randomizer = Math.floor(Math.random() * nameEnd.length);
-					passport[0] += nameEnd[randomizer] + " "
-				}
 			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
@@ -442,6 +428,20 @@ body {
 					break;
 		}
 		}
+		function randomName() {
+					const vowels = ["i", "a", "e", "o", "u"];
+					const nameStart = ["e", "m", "g", "j", "l", "a"];
+					const nameMiddle = ["gg", "s", "f", "dd", "m", "ll", "ss", "bb"];
+					const nameEnd = ["ert", "os", "to", "by"]
+					randomizer = Math.floor(Math.random() * nameStart.length); // name randomiser
+					passport[0] = " " + nameStart[randomizer]
+					randomizer = Math.floor(Math.random() * vowels.length);
+					passport[0] += vowels[randomizer]
+					randomizer = Math.floor(Math.random() * nameMiddle.length);
+					passport[0] += nameMiddle[randomizer]
+					randomizer = Math.floor(Math.random() * nameEnd.length);
+					passport[0] += nameEnd[randomizer] + " "
+				}
 		function updateMoney(what, amount) {
 			money = Number(money)
 			switch (what) {
