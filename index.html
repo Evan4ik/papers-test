@@ -225,18 +225,7 @@ body {
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70) {
 				if (passport[1] == "random ") {
-					console.log("is fricklet")
-				        setTimeout(() => {  
-						randomizer = Math.floor(Math.random() * 31);
-						if (randomizer <= 10) {
-		 	 				passport[1] = "SEX: M ";
-						} else if (randomizer <= 20) {
-							passport[1] = "SEX: F ";
-						} else {
-							passport[1] = "SEX: ? ";
-						}
-					  }, 6)
-					console.log(passport[1])
+					random("gender")
 				} else {
 					passport[1] = entrants[currentEntrant][2];
 				}
