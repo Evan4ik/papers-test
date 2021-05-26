@@ -235,7 +235,7 @@ body {
 						} else {
 							passport[1] = "SEX: ? ";
 						}
-					  }, 5)
+					  }, 6)
 					console.log(passport[1])
 				} else {
 					passport[1] = entrants[currentEntrant][2];
@@ -437,6 +437,7 @@ body {
 				}
 			}, 5);
 		} else if (entrants[i][1] == " random ") {
+			random("gender")
 			setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
 				document.getElementById("webImage").src = entrants[10][0].src
