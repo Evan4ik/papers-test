@@ -187,8 +187,8 @@ body {
 			updateMoney("set", 100);
 		}
 		updateMoney("add", 0);
-		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " leint, peeb ", " pack, numb ", " kolma, kilm ", " tot, tater "]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M "], [document.getElementById("entrant6"), " leint, peeb ", "SEX: ? "], [document.getElementById("entrant7"), " pack, numb ", "SEX: M "]
+		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " random ", " pack, numb ", " kolma, kilm ", " tot, tater "]
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M "], [document.getElementById("entrant6"), " random ", "SEX: ? "], [document.getElementById("entrant7"), " pack, numb ", "SEX: M "]
 				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M "],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
@@ -198,6 +198,19 @@ body {
 		random("name")
 		random("gender")
 		random("expire")
+		let i = nameList.indexOf(passport[0]);
+		document.getElementById("webName").innerHTML = entrants[i][1]
+		document.getElementById("webImage").src = entrants[i][0].src
+		document.getElementById("webGender").innerHTML = entrants[i][2]
+		if (entrants[i][1] == " random ") {
+			document.getElementById("webName").innerHTML = passport[0]
+			randomizer = Math.floor(Math.random() * 101);
+			if (randomizer <= 75) {
+			//nothing	
+			} else {
+			randomName()	
+			}
+		}
 		startTimer.call()
 		
 		//functinos
@@ -205,6 +218,10 @@ body {
 		
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
+			const vowels = ["i", "a", "e", "o", "u"];
+			const nameStart = ["e", "m", "g", "j", "l", "a"];
+			const nameMiddle = ["gg", "s", "f", "dd", "m", "ll", "ss", "bb"];
+			const nameEnd = ["ert", "os", "to", "by"]
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 75) {
 		 	 	passport[0] = nameList[currentEntrant];
@@ -213,6 +230,19 @@ body {
 				passport[0] = nameList[randomizer];
 			}
 			document.getElementById("name").innerHTML = passport[0]
+			if (passport[0] == " random ") {
+				randomName()
+				function randomName() {
+					randomizer = Math.floor(Math.random() * nameStart.length); // name randomiser
+					passport[0] = " " + nameStart[randomizer]
+					randomizer = Math.floor(Math.random() * vowels.length);
+					passport[0] += vowels[randomizer]
+					randomizer = Math.floor(Math.random() * nameMiddle.length);
+					passport[0] += nameMiddle[randomizer]
+					randomizer = Math.floor(Math.random() * nameEnd.length);
+					passport[0] += nameEnd[randomizer] + " "
+				}
+			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70) {
@@ -389,8 +419,6 @@ body {
 				generateEntrant()
 			}
 			let i = nameList.indexOf(passport[0]);
-			document.getElementById("webName").innerHTML = "This person does not exist"
-			document.getElementById("webGender").innerHTML = "This person could not be found."
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webImage").src = entrants[i][0].src
 			document.getElementById("webGender").innerHTML = entrants[i][2]
