@@ -177,12 +177,9 @@ body {
 		const error = document.getElementById("error")
 		error.style.display = "none";
 		var randomizer = 0
-		var correct = localStorage.getItem("streak")
+		var correct = 0
 		var money = localStorage.getItem("tokens")
 		money = Number(money)
-		if (correct == null) {
-			correct = 0;	
-		}
 		if (trophys[0] == 0) {
 			trophys[0] = 1;
 			localStorage.setItem("trophys", trophys)
