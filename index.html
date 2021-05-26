@@ -200,7 +200,12 @@ body {
 		random("expire")
 		getWebPage()
 		startTimer.call()
-		
+		//key
+		document.addEventListener("keypress", function(event) {
+  			if (event.keyCode == 89) {
+    				alert('hi.');
+  			}
+		});
 		//functinos
 		
 		
@@ -390,12 +395,7 @@ body {
 				generateEntrant()
 			}
 			getWebPage()
-		}
-		document.onkeypress = function (e) {
-    			e = e || window.event;
-			console.log("E.")
-    			// use e.keyCode
-		};
+			
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
