@@ -296,7 +296,7 @@ body {
 		function approve() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (document.getElementById("webName") == document.getElementById("name").innerHTML && document.getElementById("webGender") == document.getElementById("gender").innerHTML) {
+			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -325,11 +325,11 @@ body {
 				}
 			}  else {
 				correct -= 1
-				if (document.getElementById("webName") != document.getElementById("name").innerHTML) {
+				if (document.getElementById("webName").innerHTML != document.getElementById("name").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);  
-				} else if (document.getElementById("webGender") != document.getElementById("gender").innerHTML) {
+				} else if (document.getElementById("webGender").innerHTML != document.getElementById("gender").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
 						updateMoney("subtract", 5); 
