@@ -9,18 +9,7 @@ body {
   	background-image: url("images/bg.png");
 	background-repeat: repeat;
 }
-  input[type="button"]
-{
-    width:120px;
-    height:60px;
-    margin-left:35px;
-    display:block;
-    background-color: transparent;
-    color: transparent;
-    border: none;
-    outline:none;
-}
-
+  
   #passport {
         position: fixed;
         top: 37.5%;
@@ -132,8 +121,8 @@ body {
 <center>
 	<br><br><br><br><br><br><br>
 	<img id="buttons" src="images/button terminal.png"></img>
-	<button id="buttonL" onclick="approve()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/buttonApprove.png"> </img></button>
-	<button id="buttonR" onclick="denied()" style="border:1px solid transparent; background-color: transparent;"> <img src="images/buttonDenied.png"> </img></button>
+	<button id="buttonL" onclick="approve()" style="outline: none; border:1px solid transparent; background-color: transparent;"> <img src="images/buttonApprove.png"> </img></button>
+	<button id="buttonR" onclick="denied()" style="outline: none; border:1px solid transparent; background-color: transparent;"> <img src="images/buttonDenied.png"> </img></button>
 <p id="clock"><b> 0, 0, 0 </b></p>
 <b><p id="cash"></p></b>
 </center>
