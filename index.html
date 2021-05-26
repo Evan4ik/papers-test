@@ -435,8 +435,19 @@ body {
 		function randomName() {
 					const vowels = ["i", "a", "e", "o", "u"];
 					const nameStart = ["e", "m", "g", "j", "l", "a"];
-					const nameMiddle = ["gg", "s", "f", "dd", "m", "ll", "ss", "bb"];
+					const nameMiddle = ["gg", "s", "f", "dd", "m", "ll", "ss", "bb", "p", "b", "j", "k"];
 					const nameEnd = ["ert", "os", "to", "by"]
+					randomizer = Math.floor(Math.random() * nameStart.length); // last name
+					passport[0] = " " + nameStart[randomizer]
+					randomizer = Math.floor(Math.random() * vowels.length);
+					passport[0] += vowels[randomizer]
+			                randomizer = Math.floor(Math.random() * vowels.length);
+					passport[0] += vowels[randomizer]
+					randomizer = Math.floor(Math.random() * nameMiddle.length);
+					passport[0] += nameMiddle[randomizer]
+			                randomizer = Math.floor(Math.random() * vowels.length);
+					passport[0] += vowels[randomizer] + ","
+			            
 					randomizer = Math.floor(Math.random() * nameStart.length); // name randomiser
 					passport[0] = " " + nameStart[randomizer]
 					randomizer = Math.floor(Math.random() * vowels.length);
