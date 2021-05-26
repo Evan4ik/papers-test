@@ -325,7 +325,7 @@ body {
 				}
 			}  else {
 				correct -= 1
-				if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML) {
+				if (document.getElementById("webName") != document.getElementById("name").innerHTML) {
 						error.style.display = "block"
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);  
