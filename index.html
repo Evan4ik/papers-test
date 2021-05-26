@@ -5,6 +5,14 @@
     <meta name ="description" content="just a test"
     <meta charset="UTF-8">
 	   <style>
+@font-face {
+  font-family: 'Merchant Copy';
+  src: url('fonts/Merchant Copy.tff') format('tff'), 
+  url('fonts/Merchant Copy.tff') format('tff');
+}
+p, h1, h2, h3, h4, h5, h6 {
+font-family: 'Merchant Copy';	
+}
 body {
   	background-image: url("images/bg.png");
 	background-repeat: repeat;
@@ -33,23 +41,27 @@ body {
         background: #ffffff;
         padding: 2px;
       } 
-  #monitor {
+#monitor {
         position: fixed;
-        top: 37.5%;
+        top: 31.5%;
         left: 50%;
         transform: translate(-50%, -50%);
 	border: 20px #000000 solid;
         display: inline-block;
         background: #8bb0d7;
-	height: 700px;
+	height: 550px;
         width: 53%;
 	z-index: -1;
         padding: 2px;
       } 
+		   
 	.webPhoto {
 	  display: block;
  	  margin-left: auto;
 	}
+.toolBar {
+	
+}
 .entrantBorder {
 	  display: block;
 	  position: fixed; 
