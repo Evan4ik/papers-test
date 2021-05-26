@@ -198,24 +198,7 @@ body {
 		random("name")
 		random("gender")
 		random("expire")
-		let i = nameList.indexOf(passport[0]);
-		if (entrants[i][1] == " randomPeeplot ") {
-			setTimeout(() => {  
-				document.getElementById("webName").innerHTML = passport[0]
-				document.getElementById("webImage").src = entrants[6][0].src
-				document.getElementById("webGender").innerHTML = passport[1]
-				randomizer = Math.floor(Math.random() * 101);
-				if (randomizer <= 75) {
-					//nothing	
-				} else {
-					randomName()	
-				}
-			}, 5);
-		} else {
-			document.getElementById("webName").innerHTML = entrants[i][1]
-			document.getElementById("webImage").src = entrants[i][0].src
-			document.getElementById("webGender").innerHTML = entrants[i][2]	
-		}
+		getWebPage()
 		startTimer.call()
 		
 		//functinos
@@ -375,27 +358,7 @@ body {
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
-			let i = nameList.indexOf(passport[0]);
-			document.getElementById("webName").innerHTML = entrants[i][1]
-			document.getElementById("webImage").src = entrants[i][0].src
-			document.getElementById("webGender").innerHTML = entrants[i][2]
-			if (entrants[i][1] == " randomPeeplot ") {
-				setTimeout(() => {  
-				document.getElementById("webName").innerHTML = passport[0]
-				document.getElementById("webImage").src = entrants[6][0].src
-				document.getElementById("webGender").innerHTML = passport[1]
-				randomizer = Math.floor(Math.random() * 101);
-				if (randomizer <= 75) {
-					//nothing	
-				} else {
-					randomName()	
-				}
-				}, 5);
-			} else {
-				document.getElementById("webName").innerHTML = entrants[i][1]
-				document.getElementById("webImage").src = entrants[i][0].src
-				document.getElementById("webGender").innerHTML = entrants[i][2]	
-			}
+			getWebPage()
 
 		}
 		function denied() {
@@ -426,24 +389,7 @@ body {
 			if (currentEntrant == lastEntrant) {
 				generateEntrant()
 			}
-			let i = nameList.indexOf(passport[0]);
-			if (entrants[i][1] == " randomPeeplot ") {
-				setTimeout(() => {  
-				document.getElementById("webName").innerHTML = passport[0]
-				document.getElementById("webImage").src = entrants[6][0].src
-				document.getElementById("webGender").innerHTML = passport[1]
-				randomizer = Math.floor(Math.random() * 101);
-				if (randomizer <= 75) {
-					//nothing	
-				} else {
-					randomName()	
-				}
-				}, 5);
-			} else {
-				document.getElementById("webName").innerHTML = entrants[i][1]
-				document.getElementById("webImage").src = entrants[i][0].src
-				document.getElementById("webGender").innerHTML = entrants[i][2]	
-		}
+			getWebPage()
 		}
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
@@ -457,6 +403,28 @@ body {
 				generateEntrant()
 			}
 		}
+		
+		function getWebPage() {
+		let i = nameList.indexOf(passport[0]);
+		if (entrants[i][1] == " randomPeeplot ") {
+			setTimeout(() => {  
+				document.getElementById("webName").innerHTML = passport[0]
+				document.getElementById("webImage").src = entrants[6][0].src
+				document.getElementById("webGender").innerHTML = "SEX: ? "
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 75) {
+					//nothing	
+				} else {
+					randomName()	
+				}
+			}, 5);
+		} else {
+			document.getElementById("webName").innerHTML = entrants[i][1]
+			document.getElementById("webImage").src = entrants[i][0].src
+			document.getElementById("webGender").innerHTML = entrants[i][2]	
+		}	
+		}
+		
 		function uiToggle(whatotoggle) {
 			switch (whatotoggle) {
 				case "error":
