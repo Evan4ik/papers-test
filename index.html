@@ -225,6 +225,7 @@ body {
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70) {
 				if (passport[1] == "random ") {
+					console.log("is fricklet")
 				        setTimeout(() => {  
 						randomizer = Math.floor(Math.random() * 31);
 						if (randomizer <= 10) {
@@ -235,6 +236,7 @@ body {
 							passport[1] = "SEX: ? ";
 						}
 					  }, 5)
+					console.log(passport[1])
 				} else {
 					passport[1] = entrants[currentEntrant][2];
 				}
@@ -437,7 +439,7 @@ body {
 		} else if (entrants[i][1] == " random ") {
 			setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
-				document.getElementById("webImage").src = entrants[6][0].src
+				document.getElementById("webImage").src = entrants[10][0].src
 				document.getElementById("webGender").innerHTML = passport[1]
 				randomizer = Math.floor(Math.random() * 101);
 				if (randomizer <= 75) {
