@@ -391,6 +391,11 @@ body {
 			}
 			getWebPage()
 		}
+		document.onkeypress = function (e) {
+    			e = e || window.event;
+			console.log("E.")
+    			// use e.keyCode
+		};
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
