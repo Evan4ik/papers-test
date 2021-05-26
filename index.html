@@ -233,7 +233,9 @@ body {
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70) {
 				if (passport[1] == "random ") {
+					setTimeout(() => {  
 					random("gender")
+					}, 3)
 				} else {
 					passport[1] = entrants[currentEntrant][2];
 				}
