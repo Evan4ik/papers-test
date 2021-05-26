@@ -428,7 +428,7 @@ body {
 				} else {
 					randomName()	
 				}
-			}, 5);
+			}, 15);
 		} else if (entrants[i][1] == " random ") {
 			random("gender")
 			setTimeout(() => {  
@@ -447,7 +447,7 @@ body {
 				} else {
 					random("gender");	
 				}
-			}, 10);	
+			}, 15);	
 		} else if (entrants[i][1] == " randomSnakeman ") {
 			setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
@@ -464,7 +464,7 @@ body {
 				} else {
 					randomName()	
 				}
-			}, 5);
+			}, 15);
 		} else if (entrants[i][1] == " randomSnakewoman ") {
 			setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
@@ -481,7 +481,7 @@ body {
 				} else {
 					randomName()	
 				}
-			}, 5);
+			}, 15);
 		} else {
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webImage").src = entrants[i][0].src
