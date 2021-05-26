@@ -231,15 +231,9 @@ body {
 			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 70) {
-				if (passport[1] == "random ") {
-					setTimeout(() => {  
-					random("gender")
-					}, 3)
-				} else {
+			if (randomizer <= 70 && passport[1] != "random ") {
 					passport[1] = entrants[currentEntrant][2];
-				}
-			} else {
+			} else if (randomizer > 70 || passport[1] == "random ") {
 				randomizer = Math.floor(Math.random() * 31);
 				if (randomizer <= 10) {
 		 	 		passport[1] = "SEX: M ";
