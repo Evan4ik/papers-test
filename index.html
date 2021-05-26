@@ -230,7 +230,9 @@ body {
 			}
 			document.getElementById("name").innerHTML = passport[0]
 			if (passport[0] == " randomPeeplot ") {
-				randomName()
+				setTimeout(() => {  
+						randomName() 
+						 }, 5)
 			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
