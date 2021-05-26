@@ -187,8 +187,8 @@ body {
 			updateMoney("set", 100);
 		}
 		updateMoney("add", 0);
-		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " random ", " pack, numb ", " kolma, kilm ", " tot, tater "]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M "], [document.getElementById("entrant6"), " random ", "SEX: ? "], [document.getElementById("entrant7"), " pack, numb ", "SEX: M "]
+		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " randomPeeplot ", " pack, numb ", " kolma, kilm ", " tot, tater "]
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? "], [document.getElementById("entrant4"), " gramby ", "SEX: ? "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M "], [document.getElementById("entrant6"), " randomPeeplot ", "SEX: ? "], [document.getElementById("entrant7"), " pack, numb ", "SEX: M "]
 				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M "],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F "]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
@@ -199,17 +199,20 @@ body {
 		random("gender")
 		random("expire")
 		let i = nameList.indexOf(passport[0]);
-		document.getElementById("webName").innerHTML = entrants[i][1]
-		document.getElementById("webImage").src = entrants[i][0].src
-		document.getElementById("webGender").innerHTML = entrants[i][2]
-		if (entrants[i][1] == " random ") {
+		if (entrants[i][1] == " randomPeeplot ") {
 			document.getElementById("webName").innerHTML = passport[0]
+			document.getElementById("webImage").src = entrants[6][0].src
+			document.getElementById("webGender").innerHTML = passport[1]
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 75) {
 			//nothing	
 			} else {
 			randomName()	
 			}
+		} else {
+			document.getElementById("webName").innerHTML = entrants[i][1]
+			document.getElementById("webImage").src = entrants[i][0].src
+			document.getElementById("webGender").innerHTML = entrants[i][2]	
 		}
 		startTimer.call()
 		
@@ -226,7 +229,7 @@ body {
 				passport[0] = nameList[randomizer];
 			}
 			document.getElementById("name").innerHTML = passport[0]
-			if (passport[0] == " random ") {
+			if (passport[0] == " randomPeeplot ") {
 				randomName()
 			}
 		} else if (whatToRandom == "gender") { //gender
