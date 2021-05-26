@@ -200,15 +200,17 @@ body {
 		random("expire")
 		let i = nameList.indexOf(passport[0]);
 		if (entrants[i][1] == " randomPeeplot ") {
-			document.getElementById("webName").innerHTML = passport[0]
-			document.getElementById("webImage").src = entrants[6][0].src
-			document.getElementById("webGender").innerHTML = passport[1]
-			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 75) {
-			//nothing	
-			} else {
-			randomName()	
-			}
+			setTimeout(() => {  
+				document.getElementById("webName").innerHTML = passport[0]
+				document.getElementById("webImage").src = entrants[6][0].src
+				document.getElementById("webGender").innerHTML = passport[1]
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 75) {
+					//nothing	
+				} else {
+					randomName()	
+				}
+			}, 5);
 		} else {
 			document.getElementById("webName").innerHTML = entrants[i][1]
 			document.getElementById("webImage").src = entrants[i][0].src
@@ -378,6 +380,7 @@ body {
 			document.getElementById("webImage").src = entrants[i][0].src
 			document.getElementById("webGender").innerHTML = entrants[i][2]
 			if (entrants[i][1] == " randomPeeplot ") {
+				setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
 				document.getElementById("webImage").src = entrants[6][0].src
 				document.getElementById("webGender").innerHTML = passport[1]
@@ -387,6 +390,7 @@ body {
 				} else {
 					randomName()	
 				}
+				}, 5);
 			} else {
 				document.getElementById("webName").innerHTML = entrants[i][1]
 				document.getElementById("webImage").src = entrants[i][0].src
@@ -424,6 +428,7 @@ body {
 			}
 			let i = nameList.indexOf(passport[0]);
 			if (entrants[i][1] == " randomPeeplot ") {
+				setTimeout(() => {  
 				document.getElementById("webName").innerHTML = passport[0]
 				document.getElementById("webImage").src = entrants[6][0].src
 				document.getElementById("webGender").innerHTML = passport[1]
@@ -433,6 +438,7 @@ body {
 				} else {
 					randomName()	
 				}
+				}, 5);
 			} else {
 				document.getElementById("webName").innerHTML = entrants[i][1]
 				document.getElementById("webImage").src = entrants[i][0].src
