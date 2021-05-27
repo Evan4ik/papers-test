@@ -169,6 +169,7 @@ body {
     <img id="entrant11" width="200" height="200" src="images/snakeman1.png"></img>
     <img id="entrant12" width="200" height="200" src="images/snakewoman1.png"></img>
     <img id="entrant13" width="200" height="200" src="images/my man.png"></img>
+    <img id="dosjid" width="200" height="200" src="images/dos jid.png"></img>
 <div id="passport">
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
@@ -241,6 +242,7 @@ body {
 </div>
 		
 	<script>
+		document.getElementById("dosjid").style.display = "none";
 		 const startTimer = function() {
  autoMps = setInterval(function(){
 	 if (!document.hidden) {
@@ -409,7 +411,7 @@ body {
 		function approve() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src) {
+			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || passport[0] == " dos, jid ") {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -464,6 +466,7 @@ body {
 			}
 			let temp = 0
 			if (passport[0] == " dos, jid ") {
+			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
 				sfx[1].play();
 				setTimeout(() => {  
@@ -522,6 +525,7 @@ body {
 					updateMoney("subtract", 5);
 				}
 			if (passport[0] == " dos, jid ") {
+			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
 				trophys[0] = 1.5;
 				localStorage.setItem("trophys", trophys[0])
@@ -644,7 +648,7 @@ body {
 		  setTimeout(() => {  
 			passport[0] = " dos, jid "
 			passport[1] = "SEX: M "
-			document.getElementById("entrant1").src = "images/dos jid.png"
+			document.getElementById("dosjid").style.display = "block";
 			document.getElementById("name").innerHTML = passport[0]
 			document.getElementById("gender").innerHTML = passport[1]
 			document.getElementById("webName").innerHTML = passport[0]
@@ -652,36 +656,8 @@ body {
 			document.getElementById("webGender").innerHTML = passport[1]
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
-				entrants[0][0].style.display = "block";
 			}
-			let fakeTime = [time[0], time[1], time[2]]
-			randomizer = Math.floor(Math.random() * 61);
-				fakeTime[0] += randomizer;
-				if (fakeTime[0] > 30) {
-					fakeTime[0] -= 30;
-					fakeTime[1] += 1;
-					if (fakeTime[1] > 12) {
-						fakeTime[2] += 1;
-						fakeTime[1] = 1;
-					}
-					if (fakeTime[0] == 0) {
-						fakeTime[0] = 1;
-					}
-				}
-				if (fakeTime[0] > 30) {
-					fakeTime[0] -= 30;
-					fakeTime[1] += 1;
-					if (fakeTime[1] > 12) {
-						fakeTime[2] += 1;
-						fakeTime[1] = 1;
-					}
-					if (fakeTime[0] == 0) {
-						fakeTime[0] = 1;
-					}
-				}
-				for (randomizer = 0; randomizer < 3; randomizer ++) {
-					passport[2][randomizer] = fakeTime[randomizer]
-				}
+			random("expire")
 			  }, 30);
 			document.getElementById("entrant1").src = "images/dos jid.png"
 		}
