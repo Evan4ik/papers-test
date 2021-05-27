@@ -57,15 +57,15 @@ body {
       }
 #notePad {
         position: fixed;
-        top: 31.5%;
+        top: 45.5%;
         left: 50%;
         transform: translate(-50%, -50%);
 	border: 20px #000000 solid;
         display: inline-block;
-        background: #8bb0d7;
-	height: 550px;
-        width: 53%;
-	z-index: -1;
+        background: #FFFFFF;
+	height: 450px;
+        width: 25%;
+	z-index: 1;
         padding: 2px;
       } 
 #cash {
@@ -148,7 +148,7 @@ body {
 		<p id="expire">ENTER BY: 0,0,0 </p>
 </div>
 <div id="error">
-	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle("error")'>X </button></p>
+	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle("error", false)'>X </button></p>
 	<p id="reason"> yo mamma!! </p>
 </div>
 <div id="monitor">
@@ -505,12 +505,18 @@ body {
 		}	
 		}
 		
-		function uiToggle(whatotoggle) {
+		function uiToggle(whatotoggle, toggle) {
+			let ui = null
 			switch (whatotoggle) {
 				case "error":
-					error.style.display = "none";
+					ui = document.getElementById("error").style.display = "none";
 					break;
 		}
+			if ( toggle == true) {
+				ui.style.display = "block";	
+			} else {
+				ui.style.display = "none";	
+			}
 		}
 		function randomName() {
 					const vowels = ["i", "a", "e", "o", "u"];
