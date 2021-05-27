@@ -411,7 +411,7 @@ body {
 			document.getElementById("dosjid").style.display="none";
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML) {
+			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src) {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -456,7 +456,13 @@ body {
 					sfx[0].play();
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
-					} 
+				} else if (document.getElementById("webImage").src != entrants[currentEntrant][0].src) {
+					pcUi[0].style.display = "block"
+					sfx[0].play();
+					document.getElementById("reason").innerHTML = "Invalid photo. -5$ penalty."
+					updateMoney("subtract", 5);
+				}
+				
 			}
 			let temp = 0
 			if (passport[0] == " dos, jid ") {
@@ -505,7 +511,7 @@ body {
 			document.getElementById("dosjid").style.display="none";
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					correct += 1
 					let cCheck = correct % 10;
 					if (cCheck == 0) {
@@ -606,7 +612,7 @@ body {
 					randomizer += 1;	
 				}
 				document.getElementById("entrant11").src = "images/snakeman" + randomizer + ".png"
-				document.getElementById("webImage").src = "images/snakeman" + randomizer + ".png"
+				document.getElementById("webImage").src = document.getElementById("entrant11").src
 				document.getElementById("webGender").innerHTML = "SEX: M "
 				randomizer = Math.floor(Math.random() * 101);
 				if (randomizer <= 75) {
@@ -623,7 +629,7 @@ body {
 					randomizer += 1;	
 				}
 				document.getElementById("entrant12").src = "images/snakewoman" + randomizer + ".png"
-				document.getElementById("webImage").src = "images/snakewoman" + randomizer + ".png"
+				document.getElementById("webImage").src = document.getElementById("entrant12").src
 				document.getElementById("webGender").innerHTML = "SEX: F "
 				randomizer = Math.floor(Math.random() * 101);
 				if (randomizer <= 75) {
