@@ -224,10 +224,11 @@ body {
 	 } 
              		}, 1000);
             		}
-		var trophys = localStorage.getItem("trophys")
+		var trophys = [0, 0]
+		trophys[0] = localStorage.getItem("trophys")
 		if (trophys == null) {
 			trophys = [0, 0]
-			localStorage.setItem("trophys", trophys)
+			localStorage.setItem("trophys", trophys[0])
 		} else if (trophys[0] == 1.5) {
 				document.getElementById("articleName").innerHTML = "New border a success!";
 				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
@@ -254,7 +255,7 @@ body {
 		money = Number(money)
 		if (trophys[0] == 0) {
 			trophys[0] = 1;
-			localStorage.setItem("trophys", trophys)
+			localStorage.setItem("trophys", trophys[0])
 			updateMoney("set", 100);
 		}
 		updateMoney("add", 0);
@@ -470,7 +471,7 @@ body {
 			if (passport[0] == " dos, jid ") {
 			   setTimeout(() => {  
 				trophys[0] = 1.5;
-				localStorage.setItem("trophys", trophys)
+				localStorage.setItem("trophys", trophys[0])
 				document.getElementById("articleName").innerHTML = "New border a success!";
 				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";
 			   }, 2500);
