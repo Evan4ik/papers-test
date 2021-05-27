@@ -228,6 +228,10 @@ body {
 		if (trophys == null) {
 			trophys = [0, 0]
 			localStorage.setItem("trophys", trophys)
+		} else if (trophys[0] == 1.5) {
+				document.getElementById("articleName").innerHTML = "New border a success!";
+				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
+		}
 		} else if (trophys[0] == 2) {
 				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
 				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";	
@@ -418,6 +422,7 @@ body {
 					} 
 			}
 			if (passport[0] == " dos, jid ") {
+			   setTimeout(() => {  
 				sfx[1].play();
 				setTimeout(() => {  
 					sfx[1].currentTime=0;
@@ -426,6 +431,7 @@ body {
 				localStorage.setItem("trophys", trophys)
 				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
 				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";
+			   }, 2500);
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -461,6 +467,14 @@ body {
 					document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
 					updateMoney("subtract", 5);
 				}
+			if (passport[0] == " dos, jid ") {
+			   setTimeout(() => {  
+				trophys[0] = 1.5;
+				localStorage.setItem("trophys", trophys)
+				document.getElementById("articleName").innerHTML = "New border a success!";
+				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";
+			   }, 2500);
+			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
