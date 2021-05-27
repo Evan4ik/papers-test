@@ -407,7 +407,6 @@ body {
 		let lastEntrant = currentEntrant;
 		var timerTime = 0;
 		function approve() {
-			document.getElementById("entrant1").src = "images/axoant.png"
 			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src) {
@@ -478,6 +477,7 @@ body {
 				trophys[0] = 2;
 				localStorage.setItem("trophys", trophys[0])
 				temp = 1
+				document.getElementById("entrant1").src = "images/axoant.png"
 				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
 			    }, 2500);
 			}
@@ -507,7 +507,6 @@ body {
 			temp = 0
 		}
 		function denied() {
-			document.getElementById("entrant1").src = "images/axoant.png"
 			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
@@ -529,6 +528,7 @@ body {
 				localStorage.setItem("trophys", trophys[0])
 				document.getElementById("articleName").innerHTML = "New border a success!";
 				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";
+				document.getElementById("entrant1").src = "images/axoant.png"
 			   }, 2500);
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
