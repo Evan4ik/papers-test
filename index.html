@@ -226,7 +226,7 @@ body {
             		}
 		var trophys = [0, 0]
 		trophys[0] = localStorage.getItem("trophys")
-		if (trophys == null) {
+		if (trophys[0] == null) {
 			trophys = [0, 0]
 			localStorage.setItem("trophys", trophys[0])
 		} else if (trophys[0] == 1.5) {
