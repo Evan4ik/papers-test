@@ -205,9 +205,9 @@ body {
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0]];
 		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
-		uiPc[randomizer].style.display = "none";
+		pcUi[randomizer].style.display = "none";
 		}
-		uiPc[2].style.display = "block";
+		pcUi[2].style.display = "block";
 		var correct = 0
 		var money = localStorage.getItem("tokens")
 		money = Number(money)
@@ -510,9 +510,9 @@ body {
 		
 		function uiToggle(whatotoggle, toggle) {
 			if ( toggle == true) {
-				uiPc[whatotoggle].style.display = "block";	
+				pcUi[whatotoggle].style.display = "block";	
 			} else {
-				uiPc[whatotoggle].style.display = "none";	
+				pcUi[whatotoggle].style.display = "none";	
 			}
 		}
 		function randomName() {
