@@ -260,6 +260,7 @@ body {
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
 		}
+		const sfx = new Audio("sfx/error.mp3");//, new Audio("file.wav")]
 		random("name")
 		random("gender")
 		random("expire")
@@ -389,6 +390,7 @@ body {
 				correct -= 1
 					if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
+					sfx.play();
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
 					} 
@@ -397,14 +399,17 @@ body {
 				correct -= 1
 				if (document.getElementById("webName").innerHTML != document.getElementById("name").innerHTML) {
 						pcUi[0].style.display = "block"
+						sfx.play();
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);  
 				} else if (document.getElementById("webGender").innerHTML != document.getElementById("gender").innerHTML) {
 						pcUi[0].style.display = "block"
+					        sfx.play();
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
 						updateMoney("subtract", 5); 
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
+					sfx.play();
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
 					} 
@@ -423,7 +428,9 @@ body {
 				generateEntrant()
 			}
 			getWebPage()
-
+			setTimeout(() => {  
+				sfx.currentTime=0
+			}, 1000);
 		}
 		function denied() {
 			timerTime = 0;
@@ -436,6 +443,7 @@ body {
 					}
 				} else {
 					correct -= 1
+					sfx.play();
 					pcUi[0].style.display = "block"
 					document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
 					updateMoney("subtract", 5);
@@ -454,6 +462,9 @@ body {
 				generateEntrant()
 			}
 			getWebPage()
+			setTimeout(() => {  
+				sfx.currentTime=0
+			}, 1000);
 		}
 			
 		function generateEntrant() {
