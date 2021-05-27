@@ -169,6 +169,7 @@ body {
     <img id="entrant11" width="200" height="200" src="images/snakeman1.png"></img>
     <img id="entrant12" width="200" height="200" src="images/snakewoman1.png"></img>
     <img id="entrant13" width="200" height="200" src="images/my man.png"></img>
+<img id="dosjid" width="200" height="200" src="images/dos jid.png"</img>
 <div id="passport">
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
@@ -407,6 +408,7 @@ body {
 		let lastEntrant = currentEntrant;
 		var timerTime = 0;
 		function approve() {
+			document.getElementById("dosjid").style.display="none";
 			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML) {
@@ -500,6 +502,7 @@ body {
 			temp = 0
 		}
 		function denied() {
+			document.getElementById("dosjid").style.display="none";
 			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
@@ -636,7 +639,6 @@ body {
 		}
 		if (correct == 15 && trophys[0] == 1) {
 		  setTimeout(() => {  
-			entrants[i][0].src = "images/dos jid.png"
 			passport[0] = " dos, jid "
 			passport[1] = "SEX: M "
 			document.getElementById("name").innerHTML = passport[0]
@@ -644,6 +646,11 @@ body {
 			document.getElementById("webName").innerHTML = passport[0]
 			document.getElementById("webImage").src = entrants[i][0].src
 			document.getElementById("webGender").innerHTML = passport[1]
+			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
+				entrants[randomizer][0].style.display = "none";
+				entrants[0][0].style.display = "block";
+			}
+			document.getElementById("dosjid").style.display="block";
 			let fakeTime = [time[0], time[1], time[2]]
 			randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] += randomizer;
@@ -673,7 +680,6 @@ body {
 					passport[2][randomizer] = fakeTime[randomizer]
 				}
 			  }, 15);
-			  entrants[i][0].src = "images/dos jid.png"
 		}
 		}
 		
