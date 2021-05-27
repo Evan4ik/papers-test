@@ -326,6 +326,7 @@ body {
 						randomName() 
 						 }, 5)
 			}
+			document.getElementById("entrant1").src = "images/axoant.png"
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70 && passport[1] != "random ") {
@@ -477,7 +478,6 @@ body {
 				trophys[0] = 2;
 				localStorage.setItem("trophys", trophys[0])
 				temp = 1
-				document.getElementById("entrant1").src = "images/axoant.png"
 				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
 			    }, 2500);
 			}
@@ -528,7 +528,6 @@ body {
 				localStorage.setItem("trophys", trophys[0])
 				document.getElementById("articleName").innerHTML = "New border a success!";
 				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";
-				document.getElementById("entrant1").src = "images/axoant.png"
 			   }, 2500);
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
