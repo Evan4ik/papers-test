@@ -228,6 +228,9 @@ body {
 		if (trophys == null) {
 			trophys = [0, 0]
 			localStorage.setItem("trophys", trophys)
+		} else if (trophys[0] == 2) {
+				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
+				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";	
 		}
 		var d = new Date();
 		var time = [0, 0, 0];
@@ -260,7 +263,7 @@ body {
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
 		}
-		const sfx = new Audio("sfx/error.mp3");//, new Audio("file.wav")]
+		const sfx = [new Audio("sfx/error.mp3"), new Audio("sfx/boom.wav")];
 		random("name")
 		random("gender")
 		random("expire")
@@ -390,7 +393,7 @@ body {
 				correct -= 1
 					if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
-					sfx.play();
+					sfx[0].play();
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
 					} 
@@ -399,20 +402,30 @@ body {
 				correct -= 1
 				if (document.getElementById("webName").innerHTML != document.getElementById("name").innerHTML) {
 						pcUi[0].style.display = "block"
-						sfx.play();
+						sfx[0].play();
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
 					        updateMoney("subtract", 5);  
 				} else if (document.getElementById("webGender").innerHTML != document.getElementById("gender").innerHTML) {
 						pcUi[0].style.display = "block"
-					        sfx.play();
+					        sfx[0].play();
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
 						updateMoney("subtract", 5); 
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
-					sfx.play();
+					sfx[0].play();
 					document.getElementById("reason").innerHTML = "Invalid entry date. -5$ penalty."
 					updateMoney("subtract", 5);
 					} 
+			}
+			if (passport[0] == " dos, jid ") {
+				sfx[1].play();
+				setTimeout(() => {  
+					sfx[1].currentTime=0;
+				}, 1000);
+				trophys[0] += 1;
+				localStorage.setItem("trophys", trophys)
+				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
+				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -429,7 +442,7 @@ body {
 			}
 			getWebPage()
 			setTimeout(() => {  
-				sfx.currentTime=0
+				sfx[0].currentTime=0
 			}, 1000);
 		}
 		function denied() {
@@ -443,7 +456,7 @@ body {
 					}
 				} else {
 					correct -= 1
-					sfx.play();
+					sfx[0].play();
 					pcUi[0].style.display = "block"
 					document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
 					updateMoney("subtract", 5);
@@ -463,7 +476,7 @@ body {
 			}
 			getWebPage()
 			setTimeout(() => {  
-				sfx.currentTime=0
+				sfx[0].currentTime=0
 			}, 1000);
 		}
 			
