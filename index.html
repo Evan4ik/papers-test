@@ -56,6 +56,19 @@ body {
 	z-index: -1;
         padding: 2px;
       }
+#settings {
+        position: fixed;
+        top: 31.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+	border: 20px #000000 solid;
+        display: inline-block;
+        background: #FFFFFF;
+	height: 550px;
+        width: 53%;
+	z-index: -1;
+        padding: 2px;
+      }
 #browser {
         position: fixed;
         top: 31.5%;
@@ -175,8 +188,9 @@ body {
 		SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! </h3>
 	
 	<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/notepad1.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(2, false); uiToggle(3, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/browser.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(2, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/database.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(2, false); uiToggle(4, false); uiToggle(3, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/browser.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(4, false); uiToggle(2, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/database.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(2, false); uiToggle(4, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/settings.png"> </img></button>
 </div>
 
 <div id="monitor">
@@ -187,13 +201,24 @@ body {
 	
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/notepad1.png"> </img></button>
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(2, false); uiToggle(3, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/browser.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(2, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/database.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(2, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/settings.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, false); uiToggle(2, false); uiToggle(4, true)"> <img style="float: left; margin: 175px 0px 55px 0px" src="images/settings.png"> </img></button>
 </div>
 <div id="notePad"> 
 	<p> Creditsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle(1, false)'>X </button>
 		<br><br> 
 		<b> Jiddos - Most (good) assets, Peeplot entrant. <br> Papers Please - inspiration (obviously) <br> Mumble Games - Fricklet <br> The 1st Church of bubbleism - Snakeman, <br> Snakewoman, Timothy. </b> </p>
 </div>
+
+<div id="settings">
+	<p> Border Settings </p> <br>
+	<h1> Edit border security levels </h1> <br> <p id="curSecurity"> </p> 
+	<br> <button onclick="security(1)"> 1 </button>
+	<br> <button onclick="security(2)"> 2 </button>
+	<br> 
+	<b><p> 1. - Only need passport and valid web information to enter. <br> 2. - Need passport, valid web info and ID card. (not implemented yet) </p> </b>
+</div>
+
 <center>
 	<br><br><br><br><br><br><br>
 	<img class="buttons" id="buttons" src="images/button terminal.png"></img>
@@ -245,7 +270,7 @@ body {
 		document.getElementById("clock").innerHTML = time
 		var randomizer = 0
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0]];
-		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser")]
+		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
 		pcUi[randomizer].style.display = "none";
 		}
@@ -257,6 +282,11 @@ body {
 			trophys[0] = 1;
 			localStorage.setItem("trophys", trophys[0])
 			updateMoney("set", 100);
+		}
+		var security = localStorage.getItem("security")
+		if (security == null) {
+			security = 1;
+			localStorage.setItem("security", security)
 		}
 		updateMoney("add", 0);
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " randomPeeplot ", " pack, numb ", " kolma, kilm ", " tot, tater ", " random ", " randomSnakeman ", " randomSnakewoman ", " meun, meuw " ]
@@ -428,11 +458,14 @@ body {
 					sfx[1].currentTime=0;
 				}, 1000);
 				trophys[0] = 2;
-				console.log(trophys[0])
 				localStorage.setItem("trophys", trophys[0])
 				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
 				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";
 			   }, 2500);
+			   setTimeout(() => {  
+				pcUi[0].style.display = "block"
+				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
+			    }, 2500);
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -625,11 +658,17 @@ body {
 		}
 		
 		function uiToggle(whatotoggle, toggle) {
+			document.getElementById("curSecurity").innerHTML = "Current Security " + security;
 			if (toggle == true) {
 				pcUi[whatotoggle].style.display = "block";	
 			} else {
 				pcUi[whatotoggle].style.display = "none";	
 			}
+		}
+		function security(sL) {
+			security = sL
+			document.getElementById("curSecurity").innerHTML = "Current Security " + security;
+			localStorage.setItem("security", security);
 		}
 		function randomName() {
 					const vowels = ["i", "a", "e", "o", "u"];
