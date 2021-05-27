@@ -213,8 +213,9 @@ body {
 <div id="settings">
 	<p> Border Settings </p> <br>
 	<h1> Edit border security levels </h1> <br> <p id="curSecurity"> </p> 
-	<br> <button onclick="security(1)"> 1 </button>
-	<br> <button onclick="security(2)"> 2 </button>
+	<br> <button onclick="changeSecurity(1)"> 1 </button>
+	<br>
+	<br> <button onclick="changeSecurity(2)"> 2 </button>
 	<br> 
 	<b><p> 1. - Only need passport and valid web information to enter. <br> 2. - Need passport, valid web info and ID card. (not implemented yet) </p> </b>
 </div>
@@ -665,8 +666,8 @@ body {
 				pcUi[whatotoggle].style.display = "none";	
 			}
 		}
-		function security(sL) {
-			security = sL
+		function changeSecurity(sL) {
+			security = sL;
 			document.getElementById("curSecurity").innerHTML = "Current Security " + security;
 			localStorage.setItem("security", security);
 		}
