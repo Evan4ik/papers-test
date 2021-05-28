@@ -363,6 +363,9 @@ body {
 						random("name")
 					}
 				}
+				if (correct == 15 && trophys[0] == 1) {
+					document.getElementById("idName").innerHTML = " dos, jid ";
+				}
 				
 			}
 		} else if (whatToRandom == "gender") { //gender
@@ -387,6 +390,9 @@ body {
 				} else {
 					document.getElementById("idGender").innerHTML = passport[1];
 					random("gender")
+				}
+				if (correct == 15 && trophys[0] == 1) {
+					document.getElementById("idGender").innerHTML = "SEX: M ";
 				}
 				
 			}
