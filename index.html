@@ -354,12 +354,12 @@ body {
 			if (security == 2) {
 				document.getElementById("id").style.display = "block";
 				randomizer = Math.floor(Math.random() * 101);
-				if (randomizer <= 80) {
+				if (randomizer <= 75) {
 					document.getElementById("idName").innerHTML = passport[0];
 				} else {
 					randomizer = Math.floor(Math.random() * nameList.length);
 					document.getElementById("idName").innerHTML = nameList[randomizer];
-					if (document.getElementById("idName").innerHTML == " randomPeeplot " || document.getElementById("idName").innerHTML == " random " || document.getElementById("idName").innerHTML == " randomSnakeman " || document.getElementById("idName").innerHTML == " randomSnakewoman ")
+					if (document.getElementById("idName").innerHTML == " randomPeeplot " || document.getElementById("idName").innerHTML == " random " || document.getElementById("idName").innerHTML == " randomSnakeman " || document.getElementById("idName").innerHTML == " randomSnakewoman ") {
 						random("name")
 					}
 				}
