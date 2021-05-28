@@ -576,12 +576,9 @@ body {
 			temp = 0
 		}
 		function denied() {
-			let check = 0
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
-				check = 1
-				if (security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML && check == 1 || security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && check == 1 || security == 1) {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML && check == 1 || security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && check == 1 || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 						correct += 1
 						let cCheck = correct % 10;
 						if (cCheck == 0) {
@@ -594,13 +591,6 @@ body {
 						document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
 						updateMoney("subtract", 5);
 					}
-				} else {
-					correct -= 1
-					sfx[0].play();
-					pcUi[0].style.display = "block"
-					document.getElementById("reason").innerHTML = "Entrant clear for entry. -5$ penalty."
-					updateMoney("subtract", 5);
-				}
 			if (passport[0] == " dos, jid ") {
 			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
@@ -633,8 +623,6 @@ body {
 				document.getElementById("reason").innerHTML = "Invalid border security. -20$ penalty."
 				updateMoney("subtract", 20); 
 			}
-			check = 0;
-			temp = 0
 		}
 			
 		function generateEntrant() {
