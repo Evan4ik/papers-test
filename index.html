@@ -578,7 +578,7 @@ body {
 		function denied() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML && check == 1 || security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && check == 1 || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 						correct += 1
 						let cCheck = correct % 10;
 						if (cCheck == 0) {
