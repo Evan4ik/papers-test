@@ -627,6 +627,9 @@ body {
 		}
 		
 		function getWebPage() {
+		if (passport[1] == "random ") {
+			random("gender")	
+		}
 		let i = nameList.indexOf(passport[0]);
 		if (entrants[i][1] == " randomPeeplot ") {
 			setTimeout(() => {  
@@ -720,9 +723,6 @@ body {
 			  }, 30);
 			document.getElementById("entrant1").src = "images/dos jid.png"
 		}
-			if (passport[1] == "random ") {
-			random("gender")	
-			}
 		}
 		
 		function uiToggle(whatotoggle, toggle, sweep) {
