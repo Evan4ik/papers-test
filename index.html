@@ -363,9 +363,6 @@ body {
 						random("name")
 					}
 				}
-				if (correct == 15 && trophys[0] == 1) {
-					document.getElementById("idName").innerHTML = " dos, jid ";
-				}
 				
 			}
 		} else if (whatToRandom == "gender") { //gender
@@ -390,9 +387,6 @@ body {
 				} else {
 					document.getElementById("idGender").innerHTML = passport[1];
 					random("gender")
-				}
-				if (correct == 15 && trophys[0] == 1) {
-					document.getElementById("idGender").innerHTML = "SEX: M ";
 				}
 				
 			}
@@ -655,6 +649,7 @@ body {
 				document.getElementById("webImage").src = entrants[6][0].src
 				document.getElementById("webGender").innerHTML = "SEX: ? "
 				document.getElementById("idName").innerHTML = passport[0];
+				document.getElementById("idGender").innerHTML = "SEX: M ";
 				randomizer = Math.floor(Math.random() * 101);
 				if (randomizer <= 75) {
 					//nothing	
@@ -727,6 +722,7 @@ body {
 		if (correct == 15 && trophys[0] == 1) {
 		  setTimeout(() => {  
 			passport[0] = " dos, jid "
+			document.getElementById("idName").innerHTML = " dos, jid ";
 			passport[1] = "SEX: M "
 			document.getElementById("dosjid").style.display = "block";
 			document.getElementById("name").innerHTML = passport[0]
