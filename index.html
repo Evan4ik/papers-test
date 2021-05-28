@@ -339,8 +339,8 @@ body {
 		
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
-			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 75) {
+			randomizer = Math.floor(Math.random() * 201);
+			if (randomizer <= 165) {
 		 	 	passport[0] = nameList[currentEntrant];
 			} else {
 				randomizer = Math.floor(Math.random() * nameList.length);
@@ -367,8 +367,8 @@ body {
 				
 			}
 		} else if (whatToRandom == "gender") { //gender
-			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 70 && passport[1] != "random ") {
+			randomizer = Math.floor(Math.random() * 201);
+			if (randomizer <= 160 && passport[1] != "random ") {
 					passport[1] = entrants[currentEntrant][2];
 			} else if (randomizer > 70 || passport[1] == "random ") {
 				randomizer = Math.floor(Math.random() * 31);
@@ -393,8 +393,8 @@ body {
 			}
 		} else if (whatToRandom == "expire") {
 			let fakeTime = [time[0], time[1], time[2]];
-			randomizer = Math.floor(Math.random() * 101);
-			if (randomizer <= 75 || passport[0] == " dos, jid ") {
+			randomizer = Math.floor(Math.random() * 201);
+			if (randomizer <= 125 || passport[0] == " dos, jid ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] += randomizer;
 				if (fakeTime[0] > 30) {
@@ -422,7 +422,7 @@ body {
 				for (randomizer = 0; randomizer < 3; randomizer ++) {
 					passport[2][randomizer] = fakeTime[randomizer]
 				}
-			} else if (randomizer > 75 && passport[0] != " dos, jid ") {
+			} else if (randomizer > 125 && passport[0] != " dos, jid ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] -= randomizer;
 				if (fakeTime[0] < 1) {
