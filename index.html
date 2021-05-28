@@ -525,7 +525,6 @@ body {
 					sfx[0].play();
 					document.getElementById("reason").innerHTML = "Invalid ID Photo. -5$ penalty."
 					updateMoney("subtract", 5);
-				}
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
 					sfx[0].play();
