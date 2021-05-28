@@ -470,7 +470,7 @@ body {
 		function approve() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (security == 1 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || security == 2 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || passport[0] == " dos, jid ") {
+			if (security == 1 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || security == 2 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src && document.getElementById("webImage").src == document.getElementById("idImg").src || passport[0] == " dos, jid ") {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -519,7 +519,13 @@ body {
 						pcUi[0].style.display = "block"
 					        sfx[0].play();
 						document.getElementById("reason").innerHTML = "Invalid ID Gender. -5$ penalty."
-						updateMoney("subtract", 5); 
+						updateMoney("subtract", 5);
+				} else if (document.getElementById("webImage").src != document.getElementById("idImg").src) {
+					pcUi[0].style.display = "block"
+					sfx[0].play();
+					document.getElementById("reason").innerHTML = "Invalid ID Photo. -5$ penalty."
+					updateMoney("subtract", 5);
+				}
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
 					sfx[0].play();
@@ -579,7 +585,7 @@ body {
 		function denied() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| security == 2 && document.getElementById("webImage").src != document.getElementById("idImg").src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 						correct += 1
 						let cCheck = correct % 10;
 						if (cCheck == 0) {
@@ -743,6 +749,15 @@ body {
 			random("expire")
 			  }, 30);
 			document.getElementById("entrant1").src = "images/dos jid.png"
+		}
+		if (security == 2) {
+		randomizer = Math.floor(Math.random() * 101);
+			if (randomizer <= 75) {
+				//nothing
+			} else {
+				randomizer = Math.floor(Math.random() * entrants.length);
+				document.getElementById("idImg").src = entrants[randomizer][0];
+			}
 		}
 		}
 		
