@@ -765,6 +765,8 @@ body {
 			security = sL;
 			document.getElementById("curSecurity").innerHTML = "Current Security " + security;
 			localStorage.setItem("security", security);
+			document.getElementById("IdName").innerHTML = document.getElementById("webName").innerHTML;
+			document.getElementById("IdGender").innerHTML = document.getElementById("webGender").innerHTML;
 		}
 		function randomName() {
 					const vowels = ["i", "a", "e", "o", "u"];
