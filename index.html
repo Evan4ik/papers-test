@@ -576,7 +576,7 @@ body {
 			temp = 0
 		}
 		function denied() {
-			let check
+			let check = 0
 			timerTime = 0;
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
@@ -633,6 +633,7 @@ body {
 				document.getElementById("reason").innerHTML = "Invalid border security. -20$ penalty."
 				updateMoney("subtract", 20); 
 			}
+			check = 0;
 			temp = 0
 		}
 			
