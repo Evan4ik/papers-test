@@ -466,7 +466,7 @@ body {
 		function approve() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || passport[0] == " dos, jid ") {
+			if (security == 1 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || security == 2 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || passport[0] == " dos, jid ") {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -500,11 +500,21 @@ body {
 						pcUi[0].style.display = "block"
 						sfx[0].play();
 						document.getElementById("reason").innerHTML = "Invalid name. -5$ penalty."
-					        updateMoney("subtract", 5);  
+					        updateMoney("subtract", 5);
+				} else if (document.getElementById("webName").innerHTML != document.getElementById("idName").innerHTML) {
+						pcUi[0].style.display = "block"
+					        sfx[0].play();
+						document.getElementById("reason").innerHTML = "Invalid ID Name. -5$ penalty."
+						updateMoney("subtract", 5);
 				} else if (document.getElementById("webGender").innerHTML != document.getElementById("gender").innerHTML) {
 						pcUi[0].style.display = "block"
 					        sfx[0].play();
 						document.getElementById("reason").innerHTML = "Invalid gender. -5$ penalty."
+						updateMoney("subtract", 5);
+				} else if (document.getElementById("webGender").innerHTML != document.getElementById("idGender").innerHTML) {
+						pcUi[0].style.display = "block"
+					        sfx[0].play();
+						document.getElementById("reason").innerHTML = "Invalid ID Gender. -5$ penalty."
 						updateMoney("subtract", 5); 
 				} else if (passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
 					pcUi[0].style.display = "block"
