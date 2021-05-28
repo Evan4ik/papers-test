@@ -33,13 +33,13 @@ body {
       }
    #id {
         position: fixed;
-        top: 20.5%;
+        top: 60.5%;
         left: 7.5%;
         transform: translate(-50%, -50%);
-        border: 8px #4e2812 solid;
+        border: 8px #4BABFF solid;
         display: inline-block;
-        background: #fffbf9;
-	height: 200px; width: 400px;
+        background: #4BABFF;
+	height: 80px; width: 220px; border-radius: 25px;
         padding: 16px;
         padding-bottom: 48px;
       }
@@ -189,8 +189,8 @@ body {
 		<p id="expire">ENTER BY: 0,0,0 </p>
 </div>
 <div id="id">
-	<p> the brainwasher </p>
-	<p> sex: AAAAUURURURRRRRRRRR </p>
+	<p id="idName"> ant, axo </p>
+	<p id="idGender"> SEX: </p>
 </div>
 <div id="error">
 	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle(0, false)'>X </button></p>
@@ -259,6 +259,7 @@ body {
 </div>
 		
 	<script>
+		document.getElementById("id").style.display = "none";
 		document.getElementById("dosjid").style.display = "none";
 		 const startTimer = function() {
  autoMps = setInterval(function(){
@@ -314,6 +315,8 @@ body {
 		if (security == null) {
 			security = 1;
 			localStorage.setItem("security", security)
+		} else if (security == 2) {
+			document.getElementById("id").style.display = "block";	
 		}
 		updateMoney("add", 0);
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " randomPeeplot ", " pack, numb ", " kolma, kilm ", " tot, tater ", " random ", " randomSnakeman ", " randomSnakewoman ", " meun, meuw " ]
@@ -348,6 +351,17 @@ body {
 						randomName() 
 						 }, 5)
 			}
+			if (security == 2) {
+				document.getElementById("id").style.display = "block";
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 80) {
+					document.getElementById("idName").innerHTML = passport[0];
+				} else {
+					document.getElementById("idName").innerHTML = passport[0];
+					random("name")
+				}
+				
+			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 101);
 			if (randomizer <= 70 && passport[1] != "random ") {
@@ -363,6 +377,16 @@ body {
 				}
 			}
 		document.getElementById("gender").innerHTML = passport[1]
+			if (security == 2) {
+				randomizer = Math.floor(Math.random() * 101);
+				if (randomizer <= 80) {
+					document.getElementById("idGender").innerHTML = passport[1];
+				} else {
+					document.getElementById("idGender").innerHTML = passport[1];
+					random("gender")
+				}
+				
+			}
 		} else if (whatToRandom == "expire") {
 			let fakeTime = [time[0], time[1], time[2]];
 			randomizer = Math.floor(Math.random() * 101);
@@ -423,7 +447,17 @@ body {
 					passport[2][randomizer] = fakeTime[randomizer]
 				}
 			}
-			document.getElementById("expire").innerHTML = "ENTER BY: " + passport[2]
+			document.getElementById("expire").innerHTML = "EXPIRES: " + passport[2]
+			//if (security == 2) {
+			//	randomizer = Math.floor(Math.random() * 101);
+			//	if (randomizer <= 80) {
+			//		fakeTime[0] += passport[2][0] + Math.floor(Math.random() * 31); 
+			//		document.getElementById("idExpire").innerHTML = "ENTER BY: " + passport[2][0] + Math.floor(Math.random() * 31); 
+			//	} else {
+			//		document.getElementById("idExpire").innerHTML = "ENTER BY: " + passport[2][0] - Math.floor(Math.random() * 31);
+			//	}
+				
+			//}
 		}
 		}
 		let lastEntrant = currentEntrant;
