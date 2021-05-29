@@ -340,7 +340,7 @@ body {
 		function random(whatToRandom) {
 		if (whatToRandom == "name") { //name
 			randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 165) {
+			if (randomizer <= 196) {
 		 	 	passport[0] = nameList[currentEntrant];
 			} else {
 				randomizer = Math.floor(Math.random() * nameList.length);
@@ -368,7 +368,7 @@ body {
 			}
 		} else if (whatToRandom == "gender") { //gender
 			randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 160 && passport[1] != "random ") {
+			if (randomizer <= 195 && passport[1] != "random ") {
 					passport[1] = entrants[currentEntrant][2];
 			} else if (randomizer > 70 || passport[1] == "random ") {
 				randomizer = Math.floor(Math.random() * 31);
@@ -383,7 +383,7 @@ body {
 		document.getElementById("gender").innerHTML = passport[1]
 			if (security == 2) {
 				randomizer = Math.floor(Math.random() * 201);
-				if (randomizer <= 180) {
+				if (randomizer <= 185) {
 					document.getElementById("idGender").innerHTML = passport[1];
 				} else {
 					document.getElementById("idGender").innerHTML = passport[1];
@@ -394,7 +394,7 @@ body {
 		} else if (whatToRandom == "expire") {
 			let fakeTime = [time[0], time[1], time[2]];
 			randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 125 || passport[0] == " dos, jid ") {
+			if (randomizer <= 180 || passport[0] == " dos, jid ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] += randomizer;
 				if (fakeTime[0] > 30) {
@@ -658,7 +658,7 @@ body {
 				document.getElementById("idName").innerHTML = passport[0];
 				document.getElementById("idGender").innerHTML = "SEX: M ";
 				randomizer = Math.floor(Math.random() * 101);
-				if (randomizer <= 75) {
+				if (randomizer <= 89) {
 					//nothing	
 				} else {
 					randomName()	
@@ -681,7 +681,7 @@ body {
 					randomName();	
 				}
 				randomizer = Math.floor(Math.random() * 201);
-				if (randomizer <= 160) {
+				if (randomizer <= 190) {
 					//nothing	
 				} else {
 					random("gender");	
@@ -700,7 +700,7 @@ body {
 				document.getElementById("webGender").innerHTML = "SEX: M "
 				document.getElementById("idName").innerHTML = passport[0];
 				randomizer = Math.floor(Math.random() * 201);
-				if (randomizer <= 145) {
+				if (randomizer <= 180) {
 					//nothing	
 				} else {
 					randomName()	
@@ -719,7 +719,7 @@ body {
 				document.getElementById("webGender").innerHTML = "SEX: F "
 				document.getElementById("idName").innerHTML = passport[0];
 				randomizer = Math.floor(Math.random() * 201);
-				if (randomizer <= 145) {
+				if (randomizer <= 185) {
 					//nothing	
 				} else {
 					randomName()	
@@ -752,7 +752,7 @@ body {
 		}
 		if (security == 2) {
 		randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 165) {
+			if (randomizer <= 185) {
 				//nothing
 			} else {
 				randomizer = Math.floor(Math.random() * entrants.length);
