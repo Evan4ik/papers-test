@@ -667,7 +667,8 @@ body {
 		} else if (entrants[i][1] == " random ") {
 			passport[1] = "random "
 			random("gender")
-			setTimeout(() => {  
+			setTimeout(() => {
+				random("gender")
 				document.getElementById("webName").innerHTML = passport[0]
 				document.getElementById("webImage").src = entrants[10][0].src
 				document.getElementById("idImg").src = entrants[10][0].src;
