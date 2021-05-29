@@ -784,8 +784,8 @@ body {
 			if (security == 2 && sL == 2) {
 				//nothing	
 			} else {
-				document.getElementById("IdName").innerHTML = document.getElementById("webName").innerHTML;
-				document.getElementById("IdGender").innerHTML = document.getElementById("webGender").innerHTML;
+				document.getElementById("IdName").innerHTML = passport[0];
+				document.getElementById("IdGender").innerHTML = passport[1];
 			}
 			security = sL;
 			document.getElementById("curSecurity").innerHTML = "Current Security " + security;
