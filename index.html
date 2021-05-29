@@ -375,7 +375,7 @@ body {
 			randomizer = Math.floor(Math.random() * 201);
 			if (randomizer <= 195 && passport[1] != "random ") {
 					passport[1] = entrants[currentEntrant][2];
-			} else if (randomizer > 70 || passport[1] == "random ") {
+			} else if (randomizer > 195 || passport[1] == "random ") {
 				randomizer = Math.floor(Math.random() * 31);
 				if (randomizer <= 10) {
 		 	 		passport[1] = "SEX: M ";
@@ -427,7 +427,7 @@ body {
 				for (randomizer = 0; randomizer < 3; randomizer ++) {
 					passport[2][randomizer] = fakeTime[randomizer]
 				}
-			} else if (randomizer > 125 && passport[0] != " dos, jid ") {
+			} else if (randomizer > 180 && passport[0] != " dos, jid ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] -= randomizer;
 				if (fakeTime[0] < 1) {
