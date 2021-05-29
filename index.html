@@ -367,6 +367,11 @@ body {
 				
 			}
 		} else if (whatToRandom == "gender") { //gender
+			if (passport[1] == "random ") {
+				console.log("i am a dumbass hurr durr")
+			} else {
+				console.log("WHY")	
+			}
 			randomizer = Math.floor(Math.random() * 201);
 			if (randomizer <= 195 && passport[1] != "random ") {
 					passport[1] = entrants[currentEntrant][2];
