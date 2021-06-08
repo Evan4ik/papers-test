@@ -183,6 +183,7 @@ body {
     <img id="entrant12" width="200" height="200" src="images/snakewoman1.png"></img>
     <img id="entrant13" width="200" height="200" src="images/my man.png"></img>
     <img id="dosjid" width="200" height="200" src="images/dos jid.png"></img>
+    <img id="zoeboe" width="200" height="200" src="images/bozo.png"></img>
 <div id="passport">
 		<p id="name"> ant, axo </p>
 		<p id="gender">SEX: ? </p>
@@ -192,6 +193,8 @@ body {
 	<img id="idImg" style="float: right" height="50" width="50" src="images/axoant.png"> </img>
 	<p id="idName"> ant, axo </p> 
 	<p id="idGender"> SEX: </p>
+	<p id="idHeight"> HEIGHT: </p>
+	<p id="idWeight"> WEIGHT: </p>
 </div>
 <div id="error">
 	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle(0, false)'>X </button></p>
@@ -216,7 +219,10 @@ body {
 	<p> Database </p>
 	<center><h2 id="webName"> ant, axo </h2></center>
 	<img style="float: right" id="webImage" width="200" height="200" class="webPhoto" src="images/axoant.png"></img>
-	<h3 id="webGender">SEX: ? </h3>
+	<h3 id="webGender">SEX: ? </h3><br>
+	<h3 id="scanStuff"> </h3>
+	<br>
+<center><button onclick="scan()" id="scanButton"> <img src="images/SCAN.png"> </img></button></center>
 	
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/notepad1.png"> </img></button>
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, true, true)"> <img style="float: left; margin: 235px 0px 55px 0px" src="images/browser.png"> </img></button>
@@ -260,6 +266,7 @@ body {
 </div>
 		
 	<script>
+		document.getElementById("scan").style.display = "none";
 		document.getElementById("id").style.display = "none";
 		document.getElementById("dosjid").style.display = "none";
 		 const startTimer = function() {
@@ -277,18 +284,27 @@ body {
             		}
 		var trophys = [0, 0]
 		trophys[0] = localStorage.getItem("trophys")
-		if (trophys[0] == null) {
+		switch (trophys[0]) {
+			case null:
 			trophys = [0, 0]
 			localStorage.setItem("trophys", trophys[0])
-		} else if (trophys[0] == 1.5) {
-				document.getElementById("articleName").innerHTML = "New border a success!";
-				document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
-		} else if (trophys[0] == 2) {
-				document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
-				document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";	
-		} else { 
-                        trophys = [0, 0]
-			localStorage.setItem("trophys", trophys[0])
+			break;
+			case 1.5:
+			document.getElementById("articleName").innerHTML = "New border a success!";
+			document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
+			case 2:
+			document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
+			document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";
+			break;
+			case 3:
+			document.getElementById("articleName").innerHTML = "Terrorist crew sneaks into egglin!";
+			document.getElementById("articleDesc").innerHTML = "Oh snap!";
+			break;
+			case 3.5:
+			document.getElementById("articleName").innerHTML = "Terrorist crew sneaks into egglin!";
+			document.getElementById("articleDesc").innerHTML = "Oh snap!";	
+			document.getElementById("scanButton").style.display = "block";
+			break;
 		}
 		var d = new Date();
 		var time = [0, 0, 0];
@@ -298,7 +314,7 @@ body {
 		time[2] = d.getFullYear();
 		document.getElementById("clock").innerHTML = time
 		var randomizer = 0
-		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0]];
+		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0], 120, 60];
 		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
 		pcUi[randomizer].style.display = "none";
@@ -321,8 +337,8 @@ body {
 		}
 		updateMoney("add", 0);
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " randomPeeplot ", " pack, numb ", " kolma, kilm ", " tot, tater ", " random ", " randomSnakeman ", " randomSnakewoman ", " meun, meuw " ]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? ", " 150 CM ", " 20 KG "], [document.getElementById("entrant1"), " stark, mr ", "SEX: M ", " 160CM ", " 0 KG "], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M ", " 155 CM ", " 50 KG "], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? ", " 160 CM ", " 80 KG "], [document.getElementById("entrant4"), " gramby ", "SEX: ? ", " 80 CM ", " 4 KG "], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M ", " 60 CM ", " 10 KG "], [document.getElementById("entrant6"), " randomPeeplot ", "SEX: ? ", " 180 CM ", " 70 KG "], [document.getElementById("entrant7"), " pack, numb ", "SEX: M ", " 230 CM ", " 400 KG "]
-				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M ", " 180 CM ", "  70 KG "],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F ", " 178 CM ", " 65 KG "], [document.getElementById("entrant10"), " random ", "random ", " 175 CM ", " 70 KG "], [document.getElementById("entrant11"), " randomSnakeman ", "SEX: M ", " 100 CM ", " 80 KG "], [document.getElementById("entrant12"), " randomSnakewoman ", "SEX: F ", " 110 CM ", " 80 KG "], [document.getElementById("entrant13"), " meun, meuw ", "SEX: M ", " 55 CM ", " 5 KG "]];
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? ", 150 , 20], [document.getElementById("entrant1"), " stark, mr ", "SEX: M ", 160, 0], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M ", 155, 50], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? ", 160,  80], [document.getElementById("entrant4"), " gramby ", "SEX: ? ", 80 , 4], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M ", 60, 10], [document.getElementById("entrant6"), " randomPeeplot ", "SEX: ? ", 180,70], [document.getElementById("entrant7"), " pack, numb ", "SEX: M ", 230, 400]
+				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M ", 180, 70],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F ", 178 , 65], [document.getElementById("entrant10"), " random ", "random ", 175, 70], [document.getElementById("entrant11"), " randomSnakeman ", "SEX: M ", 100, 80], [document.getElementById("entrant12"), " randomSnakewoman ", "SEX: F ", 110, 80], [document.getElementById("entrant13"), " meun, meuw ", "SEX: M ", 55, 5]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
@@ -466,15 +482,36 @@ body {
 			//	}
 				
 			//}
+		} else if (whatToRandom == "height") {
+			randomizer = Math.floor(Math.random() * 201);
+			if (randomizer <= 185) {
+				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + " CM";
+				passport[3] = entrants[currentEntrant][3]
+			} else { 
+				randomizer = Math.floor(Math.random() * 6)
+				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + randomizer + " CM";
+				passport[3] = entrants[currentEntrant][3] + randomizer
+			}
+		} else if (whatToRandom == "weight") {
+			randomizer = Math.floor(Math.random() * 201);
+			if (randomizer <= 185) {
+				document.getElementById("scanStuff").innerHTML += "/nWEIGHT: " + entrants[currentEntrant][4] + " KG";
+				passport[4] = entrants[currentEntrant][4]
+			} else { 
+				randomizer = Math.floor(Math.random() * 16)
+				document.getElementById("scanStuff").innerHTML += "/nWEIGHT: " + entrants[currentEntrant][4] + randomizer + " KG";
+				passport[4] = entrants[currentEntrant][4] + randomizer
+			}
 		}
 		}
+		var scanned = false
 		let lastEntrant = currentEntrant;
 		var timerTime = 0;
 		let temp = 0
 		function approve() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (security == 1 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || security == 2 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src && document.getElementById("webImage").src == document.getElementById("idImg").src || passport[0] == " dos, jid ") {
+			if (security == 1 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src || security == 2 && trophys[0] < 3.5 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src && document.getElementById("webImage").src == document.getElementById("idImg").src || security == 2 && trophys[0] >= 3.5 && document.getElementById("webName").innerHTML == document.getElementById("name").innerHTML && document.getElementById("idName").innerHTML == document.getElementById("webName").innerHTML && document.getElementById("webGender").innerHTML == document.getElementById("gender").innerHTML && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML && document.getElementById("webImage").src == entrants[currentEntrant][0].src && document.getElementById("webImage").src == document.getElementById("idImg").src && passport[4] == entrants[currentEntrant][4] && passport[3] == entrants[currentEntrant][3] || passport[0] == " dos, jid ") {
 				if (passport[2][0] >= time[0] && passport[2][1] >= time[1]) {
 					correct += 1
 					let cCheck = correct % 10;
@@ -539,10 +576,21 @@ body {
 					sfx[0].play();
 					document.getElementById("reason").innerHTML = "Invalid photo. -5$ penalty."
 					updateMoney("subtract", 5);
+				} else if (passport[4] != entrants[currentEntrant][4]) {
+					pcUi[0].style.display = "block"
+					sfx[0].play();
+					document.getElementById("reason").innerHTML = "Invalid weight. -10$ penalty."
+					updateMoney("subtract", 10);
+				} else if (passport[3] != entrants[currentEntrant][3]) {
+					pcUi[0].style.display = "block"
+					sfx[0].play();
+					document.getElementById("reason").innerHTML = "Invalid height. -5$ penalty."
+					updateMoney("subtract", 5);
 				}
 				
 			}
 			if (passport[0] == " dos, jid ") {
+			   correct = 0
 			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
 				sfx[1].play();
@@ -577,18 +625,25 @@ body {
 			setTimeout(() => {  
 				sfx[0].currentTime=0
 			}, 1000);
-			if (trophys[0] == 2 && security < 2 && temp == 0) {
+			if (trophys[0] == 2 && security < 2 && temp == 0 || trophys[0] == 3.5 && security < 2) {
 				pcUi[0].style.display = "block"
 			        sfx[0].play();
 				document.getElementById("reason").innerHTML = "Invalid border security. -20$ penalty."
 				updateMoney("subtract", 20); 
 			}
+			if (trophys[0] >= 3.5 && scanned == false) {
+				pcUi[0].style.display = "block"
+			        sfx[0].play();
+				document.getElementById("reason").innerHTML = "Didn't scan entrant. -15$ penalty."
+				updateMoney("subtract", 15); 
+			}
+			scanned = false
 			temp = 0
 		}
 		function denied() {
 			timerTime = 0;
 			lastEntrant = currentEntrant
-			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| security == 2 && document.getElementById("webImage").src != document.getElementById("idImg").src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2]) {
+			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| security == 2 && document.getElementById("webImage").src != document.getElementById("idImg").src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2] || passport[3] != entrants[currentEntrant][3] || passport[4] != entrants[currentEntrant][4]) {
 						correct += 1
 						let cCheck = correct % 10;
 						if (cCheck == 0) {
@@ -602,6 +657,7 @@ body {
 						updateMoney("subtract", 5);
 					}
 			if (passport[0] == " dos, jid ") {
+		           correct = 0
 			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
 				trophys[0] = 1.5;
@@ -633,8 +689,13 @@ body {
 				document.getElementById("reason").innerHTML = "Invalid border security. -20$ penalty."
 				updateMoney("subtract", 20); 
 			}
+			scanned = false
 		}
-			
+		function scan() {
+			random("height")
+			random("weight")
+			scanned = true
+		}
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
 			currentEntrant = randomizer
@@ -649,6 +710,16 @@ body {
 		}
 		
 		function getWebPage() {
+		if (trophys[0] == 1.5 && correct == 20 || trophys[0] == 2 && correct == 20) {
+				trophys[0] == 3;
+				correct -= 20
+		} else if (trophys[0] == 3 && correct == 5) {
+			pcUi[0].style.display = "block"
+			sfx[0].play();
+			document.getElementById("reason").innerHTML = "Border update. You are now required to scan every entrant that comes through. Border security must remain at 2 or more."
+			trophys[0] == 3.5;
+			document.getElementById("scanButton").style.display = "block";
+		}
 		if (passport[1] == "random ") {
 			random("gender")	
 		}
@@ -763,6 +834,12 @@ body {
 				document.getElementById("idImg").src = entrants[randomizer][0].src;
 			}
 		}
+		if (trophys[0] < 3.5) {
+				document.getElementById("IdHeight").innerHTML = "HEIGHT: " entrants[currentEntrant][3] + " CM";
+				document.getElementById("IdWeight").innerHTML = "WEIGHT: " entrants[currentEntrant][4] + " KG";	
+		}
+			document.getElementById("IdHeight").innerHTML = entrants[currentEntrant][3]
+			document.getElementById("IdWeight").innerHTML = entrants[currentEntrant][4]
 		}
 		
 		function uiToggle(whatotoggle, toggle, sweep) {
