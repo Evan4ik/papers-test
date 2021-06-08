@@ -39,7 +39,7 @@ body {
         border: 8px #4BABFF solid;
         display: inline-block;
         background: #4BABFF;
-	height: 80px; width: 220px; border-radius: 25px;
+	height: 100px; width: 220px; border-radius: 25px;
         padding: 16px;
         padding-bottom: 48px;
       }
@@ -836,12 +836,8 @@ body {
 				document.getElementById("idImg").src = entrants[randomizer][0].src;
 			}
 		}
-		if (trophys[0] < 3.5) {
 				document.getElementById("IdHeight").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + " CM";
 				document.getElementById("IdWeight").innerHTML = "WEIGHT: " + entrants[currentEntrant][4] + " KG";	
-		}
-			document.getElementById("IdHeight").innerHTML = entrants[currentEntrant][3]
-			document.getElementById("IdWeight").innerHTML = entrants[currentEntrant][4]
 		}
 		
 		function uiToggle(whatotoggle, toggle, sweep) {
