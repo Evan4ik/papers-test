@@ -268,7 +268,6 @@ body {
 	<script>
 		document.getElementById("scan").style.display = "none";
 		document.getElementById("id").style.display = "none";
-		document.getElementById("dosjid").style.display = "none";
 		 const startTimer = function() {
  autoMps = setInterval(function(){
 	 if (!document.hidden) {
@@ -314,6 +313,7 @@ body {
 		time[2] = d.getFullYear();
 		document.getElementById("clock").innerHTML = time
 		var randomizer = 0
+		const extras = [document.getElementById("dosjid"), document.getElementById("zoeboe")];
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0], 120, 60];
 		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
@@ -343,6 +343,9 @@ body {
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
 			entrants[0][0].style.display = "block";
+		}
+		for (randomizer = 0; randomizer < extras.length; randomizer ++) {
+			extras[randomizer].style.display = "none";	
 		}
 		const sfx = [new Audio("sfx/error.mp3"), new Audio("sfx/boom.wav")];
 		random("name")
