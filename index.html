@@ -224,10 +224,10 @@ body {
 	<br>
 <center><button onclick="scan()" id="scanButton"> <img src="images/SCAN.png"> </img></button></center>
 	
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 55px 0px" src="images/notepad1.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, true, true)"> <img style="float: left; margin: 235px 0px 55px 0px" src="images/browser.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(2, true, true)"> <img style="float: left; margin: 235px 0px 55px 0px" src="images/database.png"> </img></button>
-<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(4, true, true)"> <img style="float: left; margin: 235px 0px 55px 0px" src="images/settings.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 70px 0px" src="images/notepad1.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, true, true)"> <img style="float: left; margin: 235px 0px 70px 0px" src="images/browser.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(2, true, true)"> <img style="float: left; margin: 235px 0px 70px 0px" src="images/database.png"> </img></button>
+<button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(4, true, true)"> <img style="float: left; margin: 235px 0px 70px 0px" src="images/settings.png"> </img></button>
 </div>
 <div id="notePad"> 
 	<p> Creditsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle(1, false)'>X </button>
@@ -497,11 +497,11 @@ body {
 		} else if (whatToRandom == "weight") {
 			randomizer = Math.floor(Math.random() * 201);
 			if (randomizer <= 185) {
-				document.getElementById("scanStuff").innerHTML += "/nWEIGHT: " + entrants[currentEntrant][4] + " KG";
+				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + entrants[currentEntrant][4] + " KG";
 				passport[4] = entrants[currentEntrant][4]
 			} else { 
 				randomizer = Math.floor(Math.random() * 16)
-				document.getElementById("scanStuff").innerHTML += "/nWEIGHT: " + entrants[currentEntrant][4] + randomizer + " KG";
+				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + entrants[currentEntrant][4] + randomizer + " KG";
 				passport[4] = entrants[currentEntrant][4] + randomizer
 			}
 		}
