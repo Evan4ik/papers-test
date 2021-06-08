@@ -193,8 +193,8 @@ body {
 	<img id="idImg" style="float: right" height="50" width="50" src="images/axoant.png"> </img>
 	<p id="idName"> ant, axo </p> 
 	<p id="idGender"> SEX: </p>
-	<p id="idHeight"> HEIGHT: </p>
-	<p id="idWeight"> WEIGHT: </p>
+	<p id="IdHeight"> HEIGHT: </p>
+	<p id="IdWeight"> WEIGHT: </p>
 </div>
 <div id="error">
 	<p> Errorㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<button style="border:1px solid transparent; background-color: transparent;" onclick='uiToggle(0, false)'>X </button></p>
@@ -266,7 +266,6 @@ body {
 </div>
 		
 	<script>
-		document.getElementById("scanButton").style.display = "none";
 		document.getElementById("id").style.display = "none";
 		 const startTimer = function() {
  autoMps = setInterval(function(){
@@ -302,7 +301,7 @@ body {
 			case 3.5:
 			document.getElementById("articleName").innerHTML = "Terrorist crew sneaks into egglin!";
 			document.getElementById("articleDesc").innerHTML = "Oh snap!";	
-			document.getElementById("scanButton").style.display = "block";
+			pcUi[5].style.display = "block";
 			break;
 		}
 		var d = new Date();
@@ -315,7 +314,7 @@ body {
 		var randomizer = 0
 		const extras = [document.getElementById("dosjid"), document.getElementById("zoeboe")];
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0], 120, 60];
-		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings")]
+		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings"), document.getElementById("scanButton")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
 		pcUi[randomizer].style.display = "none";
 		}
@@ -721,7 +720,7 @@ body {
 			sfx[0].play();
 			document.getElementById("reason").innerHTML = "Border update. You are now required to scan every entrant that comes through. Border security must remain at 2 or more."
 			trophys[0] == 3.5;
-			document.getElementById("scanButton").style.display = "block";
+			pcUi[5].style.display = "block";
 		}
 		if (passport[1] == "random ") {
 			random("gender")	
