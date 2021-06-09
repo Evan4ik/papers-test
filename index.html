@@ -220,7 +220,7 @@ body {
 	<h3 id="webGender">SEX: ? </h3><br>
 	<h3 id="scanStuff"> </h3>
 	<br>
-	<center><button onclick="scan()" id="scanButton"> <img src="images/SCAN.png"> </img></button></center>
+	<center><button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> onclick="scan()" id="scanButton"> <img height="50" width="125" src="images/SCAN.png"> </img></button></center>
 
 	
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 70px 0px" src="images/notepad1.png"> </img></button>
@@ -280,6 +280,7 @@ body {
              		}, 1000);
             		}
 		var trophys = [0, 0]
+		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings"), document.getElementById("scanButton")]
 		trophys[0] = localStorage.getItem("trophys")
 		trophys[0] = Number(trophys[0])
 		switch (trophys[0]) {
@@ -310,7 +311,6 @@ body {
 		var randomizer = 0
 		const extras = [document.getElementById("dosjid"), document.getElementById("zoeboe")];
 		var passport = [document.getElementById("name"), document.getElementById("gender"), [0, 0, 0], 120, 60];
-		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings"), document.getElementById("scanButton")]
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
 		pcUi[randomizer].style.display = "none";
 		}
