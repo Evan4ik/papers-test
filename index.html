@@ -217,12 +217,13 @@ body {
 
 <div id="monitor">
 	<p> Database </p>
+	<center><button style="border:1px solid transparent; background-color: transparent"; onclick="scan()" id="scanButton"> <img height="50px"; width="125px"; src="images/SCAN.png"> </img></button></center>
 	<center><h2 id="webName"> ant, axo </h2></center>
 	<img style="float: right" id="webImage" width="200" height="200" class="webPhoto" src="images/axoant.png"></img>
 	<h3 id="webGender">SEX: ? </h3><br>
 	<h3 id="scanStuff"> </h3>
 	<br>
-<center><button onclick="scan()" id="scanButton"> <img src="images/SCAN.png"> </img></button></center>
+
 	
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(1, true)"> <img style="float: left; margin: 50px 0px 70px 0px" src="images/notepad1.png"> </img></button>
 <button style="outline: none; border:1px solid transparent; background-color: transparent;" onclick="uiToggle(3, true, true)"> <img style="float: left; margin: 235px 0px 70px 0px" src="images/browser.png"> </img></button>
@@ -715,9 +716,9 @@ body {
 		} else if (trophys[0] == 3 && correct == 5) {
 			pcUi[0].style.display = "block"
 			sfx[0].play();
-			document.getElementById("reason").innerHTML = "Border update. You are now required to scan every entrant that comes through. Border security must remain at 2 or more."
+			document.getElementById("reason").innerHTML = "Border update. \n\ You are now required to scan every entrant that comes through. Border security must remain at 2 or more."
 			localStorage.setItem("trophys", 3.5);
-			trophys[0] == localStorage.getItem("trophys");
+			trophys[0] = localStorage.getItem("trophys");
 			pcUi[5].style.display = "block";
 		}
 		if (passport[1] == "random ") {
