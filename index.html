@@ -489,7 +489,6 @@ body {
 				randomizer = Math.floor(Math.random() * 6)
 				randomizer = Number(randomizer)
 				entrants[currentEntrant][3] = Number(entrants[currentEntrant][3])
-				console.log(randomizer + " and " + entrants[currentEntrant][3]);
 				passport[3] = entrants[currentEntrant][3]
 				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + passport[3] + " CM";
 			}
@@ -502,7 +501,6 @@ body {
 			} else { 
 				randomizer = Math.floor(Math.random() * 16)
 				randomizer = Number(randomizer)
-				console.log(randomizer + " and " + entrants[currentEntrant][4]);
 				entrants[currentEntrant][4] = Number(entrants[currentEntrant][4])
 				passport[4] = entrants[currentEntrant][4] + randomizer
 				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + passport[4] + " KG";
