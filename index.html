@@ -719,6 +719,7 @@ body {
 				correct -= 20
 				News("Terrorist crew sneaks into egglin!", "Oh snap!");
 		} else if (trophys[0] == 3 && correct == 5) {
+			scanned = true
 			pcUi[0].style.display = "block"
 			sfx[0].play();
 			document.getElementById("reason").innerHTML = "You are now required to scan every entrant that comes through .Security must be at 2 or more."
