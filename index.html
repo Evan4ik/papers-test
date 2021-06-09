@@ -482,22 +482,26 @@ body {
 		} else if (whatToRandom == "height") {
 			randomizer = Math.floor(Math.random() * 201);
 			if (randomizer <= 185) {
-				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + " CM";
+				entrants[currentEntrant][3] = Number(entrants[currentEntrant][3])
 				passport[3] = entrants[currentEntrant][3]
+				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + pasport[3] + " CM";
 			} else { 
 				randomizer = Math.floor(Math.random() * 6)
-				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + randomizer + " CM";
-				passport[3] = entrants[currentEntrant][3] + randomizer
+				entrants[currentEntrant][3] = Number(entrants[currentEntrant][3])
+				passport[3] = entrants[currentEntrant][3]
+				document.getElementById("scanStuff").innerHTML = "HEIGHT: " + passport[3] + randomizer + " CM";
 			}
 		} else if (whatToRandom == "weight") {
 			randomizer = Math.floor(Math.random() * 201);
 			if (randomizer <= 185) {
-				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + entrants[currentEntrant][4] + " KG";
+				entrants[currentEntrant][4] = Number(entrants[currentEntrant][4])
 				passport[4] = entrants[currentEntrant][4]
+				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + passport[4] + " KG";
 			} else { 
 				randomizer = Math.floor(Math.random() * 16)
-				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + entrants[currentEntrant][4] + randomizer + " KG";
+				entrants[currentEntrant][4] = Number(entrants[currentEntrant][4])
 				passport[4] = entrants[currentEntrant][4] + randomizer
+				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + passport[4] + randomizer + " KG";
 			}
 		}
 		}
@@ -689,9 +693,11 @@ body {
 			scanned = false
 		}
 		function scan() {
+		     if (scanned == false) {
 			random("height")
 			random("weight")
 			scanned = true
+		     }
 		}
 		function generateEntrant() {
 			randomizer = Math.floor(Math.random() * entrants.length);
