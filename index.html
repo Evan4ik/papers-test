@@ -289,19 +289,15 @@ body {
 			localStorage.setItem("trophys", trophys[0])
 			break;
 			case 1.5:
-			document.getElementById("articleName").innerHTML = "New border a success!";
-			document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
+			News("New border a success!", "Question is, will this be subject to change?")	
 			case 2:
-			document.getElementById("articleName").innerHTML = "Border under terrorist attack!";
-			document.getElementById("articleDesc").innerHTML = "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?";
+			News("Border under terrorist attack!", "Prepare for security to be raised! Perhaps the iron border isnt so iron after all?")
 			break;
 			case 3:
-			document.getElementById("articleName").innerHTML = "Terrorist crew sneaks into egglin!";
-			document.getElementById("articleDesc").innerHTML = "Oh snap!";
+			News("Terrorist crew sneaks into egglin!", "Oh snap!");
 			break;
 			case 3.5:
-			document.getElementById("articleName").innerHTML = "Terrorist crew sneaks into egglin!";
-			document.getElementById("articleDesc").innerHTML = "Oh snap!";	
+			News("Terrorist crew sneaks into egglin!", "Oh snap!");	
 			pcUi[5].style.display = "block";
 			break;
 		}
@@ -715,11 +711,13 @@ body {
 				localStorage.setItem("trophys", 3);
 				trophys[0] = localStorage.getItem("trophys");
 				correct -= 20
+				News("Terrorist crew sneaks into egglin!", "Oh snap!");
 		} else if (trophys[0] == 3 && correct == 5) {
 			pcUi[0].style.display = "block"
 			sfx[0].play();
 			document.getElementById("reason").innerHTML = "Border update. You are now required to scan every entrant that comes through. Border security must remain at 2 or more."
-			trophys[0] == 3.5;
+			localStorage.setItem("trophys", 3.5);
+			trophys[0] == localStorage.getItem("trophys");
 			pcUi[5].style.display = "block";
 		}
 		if (passport[1] == "random ") {
@@ -927,6 +925,10 @@ body {
 		"SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD! SQUISHLIT FOUND DEAD!"
 			}
 		}
+		function News(headline, article) {
+					document.getElementById("articleName").innerHTML = headline
+					document.getElementById("articleDesc").innerHTML = article
+			}
 	</script>
 	</body>
 </html>
