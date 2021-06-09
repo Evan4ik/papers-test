@@ -282,12 +282,12 @@ body {
             		}
 		var trophys = [0, 0]
 		trophys[0] = localStorage.getItem("trophys")
+		if (trophys[0] == null) {
+			trophys = [0, 0]
+			localStorage.setItem("trophys", trophys[0])	
+		}
 		trophys[0] = Number(trophys[0])
 		switch (trophys[0])
-			case null:
-			trophys = [0, 0]
-			localStorage.setItem("trophys", trophys[0])
-			break;
 			case 1.5:
 			document.getElementById("articleName").innerHTML = "New border a success!";
 			document.getElementById("articleDesc").innerHTML = "Question is, will this be subject to change?";	
