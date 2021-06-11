@@ -661,6 +661,7 @@ body {
 		}
 		function denied() {
 			timerTime = 0;
+			extras[1].style.display = "none";
 			lastEntrant = currentEntrant
 			if (entrants[currentEntrant][1] != document.getElementById("name").innerHTML || entrants[currentEntrant][2] != document.getElementById("gender").innerHTML || document.getElementById("webImage").src != entrants[currentEntrant][0].src || security == 2 && document.getElementById("idName").innerHTML != document.getElementById("webName").innerHTML|| security == 2 && document.getElementById("idGender").innerHTML == document.getElementById("webGender").innerHTML|| security == 2 && document.getElementById("webImage").src != document.getElementById("idImg").src || passport[2][0] <= time[0] && passport[2][1] <= time[1] || passport[2][0] >= time[0] && passport[2][1] <= time[1] || passport[2][2] < time[2] || passport[3] != entrants[currentEntrant][3] || passport[4] != entrants[currentEntrant][4]) {
 						correct += 1
