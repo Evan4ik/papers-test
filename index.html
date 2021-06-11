@@ -621,11 +621,11 @@ body {
 			} else if (passport[0] == " zoe, boe ") {
 				trophys[1] ++
 			   	localStorage.setItem("terrorists", trophys[1])
-				document.getElementById("zoeboe").style.display = "none";
 				trophys[0] = 3.75;
 				localStorage.setItem("trophys", trophys[0]);
 				document.getElementById("reason").innerHTML = "Invalid Weight. Possible terrorist admitted. -15$ penalty."
 				News("Terrorist crew sneaks into Fudlia!", 'Be on the lookout for a small white "Hamster" type creature, and a weird blue clown.');
+				extras[1].style.display = "none";
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
