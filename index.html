@@ -817,22 +817,8 @@ body {
 		}
 		if (correct == 15 && trophys[0] == 1) {
 		  setTimeout(() => {  
-			passport[0] = " dos, jid "
-			document.getElementById("idName").innerHTML = " dos, jid ";
-			passport[1] = "SEX: M "
-			document.getElementById("dosjid").style.display = "block";
-			document.getElementById("name").innerHTML = passport[0]
-			document.getElementById("gender").innerHTML = passport[1]
-			document.getElementById("webName").innerHTML = passport[0]
-			document.getElementById("webImage").src = "images/dos jid.png"
-			document.getElementById("webGender").innerHTML = passport[1]
-			document.getElementById("idImg").src = "images/ dos jig.png"
-			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
-				entrants[randomizer][0].style.display = "none";
-			}
-			random("expire")
+			storyNpc(" dos, jid ", "SEX: M ", "images/dos jid.png", "WEIGHT: 58KG", "HEIGHT: 130 CM", 0);
 			  }, 30);
-			document.getElementById("entrant1").src = "images/dos jid.png"
 		}
 		if (security == 2) {
 		randomizer = Math.floor(Math.random() * 201);
@@ -845,6 +831,31 @@ body {
 		}
 				document.getElementById("IdHeight").innerHTML = "HEIGHT: " + entrants[currentEntrant][3] + " CM";
 				document.getElementById("IdWeight").innerHTML = "WEIGHT: " + entrants[currentEntrant][4] + " KG";	
+		}
+		
+		function storyNpc(name, sex, image, weight, height, npc) {
+			passport[0] = name
+			document.getElementById("idName").innerHTML = name;
+			passport[1] = sex
+			switch (npc) {
+				case 0:
+				document.getElementById("dosjid").style.display = "block";
+				break;
+			}
+			document.getElementById("name").innerHTML = passport[0]
+			document.getElementById("gender").innerHTML = passport[1]
+			document.getElementById("webName").innerHTML = passport[0]
+			document.getElementById("webImage").src = image
+			document.getElementById("webGender").innerHTML = passport[1]
+			document.getElementById("idImg").src = image
+			document.getElementById("idName").innerHTML = name
+			document.getElementById("idGender").innerHTML = sex
+			 document.getElementById("IdWeight").innerHTML = weight
+			 document.getElementById("IdHeight").innerHTML = height
+			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
+				entrants[randomizer][0].style.display = "none";
+			}
+			random("expire")
 		}
 		
 		function uiToggle(whatotoggle, toggle, sweep) {
