@@ -304,6 +304,9 @@ body {
 			News("Terrorist crew sneaks into egglin!", "Oh snap!");	
 			pcUi[5].style.display = "block";
 			break;
+			case 3.75:
+			News("Terrorist crew sneaks into Fudlia!", 'Be on the lookout for a small white "Hamster" type creature, and a weird blue clown.');
+			break;
 		}
 		var d = new Date();
 		var time = [0, 0, 0];
@@ -411,7 +414,7 @@ body {
 		} else if (whatToRandom == "expire") {
 			let fakeTime = [time[0], time[1], time[2]];
 			randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 180 || passport[0] == " dos, jid ") {
+			if (randomizer <= 180 || passport[0] == " dos, jid " || passport[0] == " zoe, boe ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] += randomizer;
 				if (fakeTime[0] > 30) {
@@ -439,7 +442,7 @@ body {
 				for (randomizer = 0; randomizer < 3; randomizer ++) {
 					passport[2][randomizer] = fakeTime[randomizer]
 				}
-			} else if (randomizer > 180 && passport[0] != " dos, jid ") {
+			} else if (randomizer > 180 && passport[0] != " dos, jid " && passport[0] != " zoe, boe ") {
 				randomizer = Math.floor(Math.random() * 61);
 				fakeTime[0] -= randomizer;
 				if (fakeTime[0] < 1) {
@@ -494,11 +497,11 @@ body {
 			}
 		} else if (whatToRandom == "weight") {
 			randomizer = Math.floor(Math.random() * 201);
-			if (randomizer <= 185) {
+			if (randomizer <= 185 && passport[0] != " zoe, boe ") {
 				entrants[currentEntrant][4] = Number(entrants[currentEntrant][4])
 				passport[4] = entrants[currentEntrant][4]
 				document.getElementById("scanStuff").innerHTML += "\n\WEIGHT: " + passport[4] + " KG";
-			} else { 
+			} else if (randomizer < 185 || passport[0] == " zoe, boe ") { 
 				randomizer = Math.floor(Math.random() * 16)
 				randomizer = Number(randomizer)
 				entrants[currentEntrant][4] = Number(entrants[currentEntrant][4])
@@ -610,6 +613,10 @@ body {
 				temp = 1
 				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
 			    }, 2500);
+			} else if (passport[0] == " zoe, boe ") {
+				trophys[0] = 3.75;
+				localStorage.setItem("trophys", trophys[0]);
+				News("Terrorist crew sneaks into Fudlia!", 'Be on the lookout for a small white "Hamster" type creature, and a weird blue clown.');
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
@@ -724,7 +731,7 @@ body {
 			scanned = true
 			pcUi[0].style.display = "block"
 			sfx[0].play();
-			document.getElementById("reason").innerHTML = "You are now required to scan every entrant that comes through .Security must be at 2 or more."
+			document.getElementById("reason").innerHTML = "You are now required to scan every entrant that comes through. Security must be at 2 or more."
 			localStorage.setItem("trophys", 3.5);
 			trophys[0] = localStorage.getItem("trophys");
 			pcUi[5].style.display = "block";
@@ -817,8 +824,12 @@ body {
 		}
 		if (correct == 15 && trophys[0] == 1) {
 		  setTimeout(() => {  
-			storyNpc(" dos, jid ", "SEX: M ", "images/dos jid.png", "WEIGHT: 58KG", "HEIGHT: 130 CM", 0);
-			  }, 30);
+			storyNpc(" dos, jid ", "SEX: M ", "images/dos jid.png", "WEIGHT: 58KG", "HEIGHT: 126 CM", 0);
+			  }, 16);
+		} else if (correct == 20 && trophys[0] == 3) {
+			 setTimeout(() => {  
+			storyNpc(" zoe, boe ", "SEX: ? ", "images/bozo.png", "WEIGHT: 80KG", "HEIGHT: 74 CM", 1);
+			  }, 16);
 		}
 		if (security == 2) {
 		randomizer = Math.floor(Math.random() * 201);
@@ -837,11 +848,6 @@ body {
 			passport[0] = name
 			document.getElementById("idName").innerHTML = name;
 			passport[1] = sex
-			switch (npc) {
-				case 0:
-				document.getElementById("dosjid").style.display = "block";
-				break;
-			}
 			document.getElementById("name").innerHTML = passport[0]
 			document.getElementById("gender").innerHTML = passport[1]
 			document.getElementById("webName").innerHTML = passport[0]
@@ -852,6 +858,15 @@ body {
 			document.getElementById("idGender").innerHTML = sex
 			 document.getElementById("IdWeight").innerHTML = weight
 			 document.getElementById("IdHeight").innerHTML = height
+			switch (npc) {
+				case 0:
+				document.getElementById("dosjid").style.display = "block";
+				break;
+				case 1:
+				document.getElementById("zoeboe").style.display = "block";
+				random("weight")
+				break;
+			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 				entrants[randomizer][0].style.display = "none";
 			}
