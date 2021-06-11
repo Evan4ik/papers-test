@@ -302,11 +302,13 @@ body {
 			break;
 			case 3.5:
 			News("Terrorist crew sneaks into egglin!", "Oh snap!");	
-			pcUi[5].style.display = "block";
 			break;
 			case 3.75:
 			News("Terrorist crew sneaks into Fudlia!", 'Be on the lookout for a small white "Hamster" type creature, and a weird blue clown.');
 			break;
+		}
+		if (trophys[0] >= 3.5) {
+			pcUi[5].style.display = "block";
 		}
 		var d = new Date();
 		var time = [0, 0, 0];
