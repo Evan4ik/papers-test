@@ -616,8 +616,10 @@ body {
 				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
 			    }, 2500);
 			} else if (passport[0] == " zoe, boe ") {
+				document.getElementById("zoeboe").style.display = "none";
 				trophys[0] = 3.75;
 				localStorage.setItem("trophys", trophys[0]);
+				document.getElementById("reason").innerHTML = "Invalid Weight. Possible terrorist admitted. -15$ penalty."
 				News("Terrorist crew sneaks into Fudlia!", 'Be on the lookout for a small white "Hamster" type creature, and a weird blue clown.');
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
