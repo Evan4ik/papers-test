@@ -339,8 +339,8 @@ body {
 		}
 		updateMoney("add", 0);
 		const nameList = [" ant, axo ", " stark, mr ", " jake, johnson ", " skittlus, timotha ", " gramby ", " manuel, tony ", " randomPeeplot ", " pack, numb ", " kolma, kilm ", " tot, tater ", " random ", " randomSnakeman ", " randomSnakewoman ", " meun, meuw " ]
-		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? ", 150 , 20], [document.getElementById("entrant1"), " stark, mr ", "SEX: M ", 160, 0], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M ", 155, 50], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? ", 160,  80], [document.getElementById("entrant4"), " gramby ", "SEX: ? ", 80 , 4], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M ", 60, 10], [document.getElementById("entrant6"), " randomPeeplot ", "SEX: ? ", 180,70], [document.getElementById("entrant7"), " pack, numb ", "SEX: M ", 230, 400]
-				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M ", 180, 70],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F ", 178 , 65], [document.getElementById("entrant10"), " random ", "random ", 175, 70], [document.getElementById("entrant11"), " randomSnakeman ", "SEX: M ", 100, 80], [document.getElementById("entrant12"), " randomSnakewoman ", "SEX: F ", 110, 80], [document.getElementById("entrant13"), " meun, meuw ", "SEX: M ", 55, 5]];
+		const entrants = [[document.getElementById("entrant0"), " ant, axo ", "SEX: ? ", 146 , 17], [document.getElementById("entrant1"), " stark, mr ", "SEX: M ", 157, 0], [document.getElementById("entrant2"), " jake, johnson ", "SEX: M ", 154, 53], [document.getElementById("entrant3"), " skittlus, timotha ", "SEX: ? ", 160,  80], [document.getElementById("entrant4"), " gramby ", "SEX: ? ", 63 , 4], [document.getElementById("entrant5"), " manuel, tony ", "SEX: M ", 35, 17], [document.getElementById("entrant6"), " randomPeeplot ", "SEX: ? ", 177, 64], [document.getElementById("entrant7"), " pack, numb ", "SEX: M ", 236, 428]
+				 ,  [document.getElementById("entrant8"), " kolma, kilm ", "SEX: M ", 173, 75],  [document.getElementById("entrant9"), " tot, tater ", "SEX: F ", 178 , 63], [document.getElementById("entrant10"), " random ", "random ", 178, 73], [document.getElementById("entrant11"), " randomSnakeman ", "SEX: M ", 104, 84], [document.getElementById("entrant12"), " randomSnakewoman ", "SEX: F ", 111, 82], [document.getElementById("entrant13"), " meun, meuw ", "SEX: M ", 55, 16]];
 		var currentEntrant = 0;
 		for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
 			entrants[randomizer][0].style.display = "none";
@@ -874,6 +874,7 @@ body {
 				break;
 				case 1:
 				document.getElementById("zoeboe").style.display = "block";
+				currentEntrant = 10;
 				break;
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
