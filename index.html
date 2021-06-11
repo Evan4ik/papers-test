@@ -281,6 +281,7 @@ body {
              		}, 1000);
             		}
 		var trophys = [0, 0]
+		trophys[1] = localStorage.getItem("terrorists")
 		const pcUi = [document.getElementById("error"), document.getElementById("notePad"), document.getElementById("monitor"), document.getElementById("browser"), document.getElementById("settings"), document.getElementById("scanButton")];
 		for (randomizer = 0; randomizer < pcUi.length; randomizer ++) {
 			pcUi[randomizer].style.display = "none";
@@ -599,6 +600,8 @@ body {
 			}
 			if (passport[0] == " dos, jid ") {
 			   correct = 0
+		           trophys[1] = 1
+			   localStorage.setItem("terrorists", trophys[1])
 			   document.getElementById("dosjid").style.display = "none";
 			   setTimeout(() => {  
 				sfx[1].play();
@@ -616,6 +619,8 @@ body {
 				document.getElementById("reason").innerHTML = "Im sure youve all read the news. As of today, I expect every border to have a security level of atleast 2."
 			    }, 2500);
 			} else if (passport[0] == " zoe, boe ") {
+				trophys[1] ++
+			   	localStorage.setItem("terrorists", trophys[1])
 				document.getElementById("zoeboe").style.display = "none";
 				trophys[0] = 3.75;
 				localStorage.setItem("trophys", trophys[0]);
@@ -726,6 +731,7 @@ body {
 		}
 		
 		function getWebPage() {
+		document.getElementById("scanStuff").innerHTML = ""
 		if (trophys[0] == 1.5 && correct == 20 || trophys[0] == 2 && correct == 20) {
 				localStorage.setItem("trophys", 3);
 				trophys[0] = localStorage.getItem("trophys");
@@ -868,7 +874,6 @@ body {
 				break;
 				case 1:
 				document.getElementById("zoeboe").style.display = "block";
-				random("weight")
 				break;
 			}
 			for (randomizer = 0; randomizer < entrants.length; randomizer ++) {
